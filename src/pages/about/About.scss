@@ -1,0 +1,150 @@
+@import "../../style/main.scss";
+
+.about-container {
+  background: linear-gradient(180deg, #104245 0%, #90a88f 25%, #a8b276 70%, #104245 95%); /* beige vers vert clair */
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+  font-family: "Libre Baskerville", serif;
+  position: relative;
+}
+
+/* Bloc article type papier naturel */
+.about-content {
+  width: 70%;
+  background-color: #fffdf5; /* papier clair */
+  padding: 40px 50px;
+  border: 2px solid #c7a17a; /* brun clair */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(100, 140, 80, 0.15); /* ombre verte douce */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.about-title {
+  color: #4a3f35;
+  font-family: "Libre Baskerville", serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #c7a17a; /* ligne sous le titre */
+  padding-bottom: 10px;
+  @include lg {
+    font-size: 25px;
+  }
+  @include md {
+    font-size: 22px;
+  }
+}
+
+.about-subtitle {
+  color: #4a3f35;
+  font-family: "Libre Baskerville", serif;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-left: 4px solid #7a5c3d;
+  padding-left: 10px;
+  @include lg {
+    font-size: 19px;
+  }
+  @include md {
+    font-size: 17px;
+  }
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4a3f35;
+  margin-bottom: 25px;
+  text-align: justify;
+  @include lg {
+    font-size: 15px;
+  }
+  @include md {
+    font-size: 12px;
+  }
+}
+
+.about-text:first-letter {
+  font-size: 22px;
+  font-weight: bold;
+  color: #7a5c3d;
+  @include lg {
+    font-size: 20px;
+  }
+  @include md {
+    font-size: 16px;
+  }
+}
+
+/* CTA */
+.about-cta {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.cta-about-button {
+  background: linear-gradient(45deg, #a8b276, #90a88f);
+  color: #4a3f35;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(100, 140, 80, 0.2);
+}
+
+.cta-about-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(100, 140, 80, 0.3);
+  background: linear-gradient(45deg, #90a88f, #a8b276);
+}
+
+.decor-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .deco {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    opacity: 0.6;
+    transition: all 0.5s ease; // un peu translucide pour un effet décor
+  }
+
+  .deco1 {
+    top: 50px;
+    left: -80px;
+    transform: rotate(25deg);
+  }
+  .deco3 {
+    width: 65px;
+
+    bottom: 50px;
+    right: -140px;
+    transform: translateX(-50%) rotate(-15deg);
+  }
+  .deco4 {
+    width: 85px;
+    bottom: 100px;
+    left: -70px;
+    transform: translateX(-50%);
+  }
+  .deco5 {
+    width: 65px;
+
+    bottom: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

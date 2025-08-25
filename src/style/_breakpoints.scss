@@ -1,0 +1,19 @@
+// _breakpoints.scss
+
+// Breakpoints classiques
+$bp-xs: 320px;
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+$bp-xxl: 1440px;
+
+// Option 1 : media queries classiques avec mixins
+@mixin xs { @media (max-width: #{$bp-xs}) { @content; } }
+@mixin sm { @media (max-width: #{$bp-sm}) { @content; } }
+@mixin md { @media (max-width: #{$bp-md}) { @content; } }
+@mixin lg { @media (max-width: #{$bp-lg}) { @content; } }
+@mixin xl { @media (max-width: #{$bp-xl}) { @content; } }
+@mixin xxl { @media (max-width: #{$bp-xxl}) { @content; } }
+
+// Option 2 : tu peux aussi directement écrire les media queries dans tes fichiers sans mixin

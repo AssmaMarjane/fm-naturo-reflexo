@@ -1,0 +1,11 @@
+// src/sass/_fonts.scss
+
+// 👉 Import Google Fonts (via CSS import)
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Great+Vibes&family=Parisienne&family=Libre+Baskerville:wght@400;700&display=swap");
+
+// 🎨 Variables de polices
+$font-primary: "Montserrat", sans-serif;        // police moderne, lisible
+$font-secondary: "Playfair Display", serif;     // titres élégants
+$font-script1: "Great Vibes", cursive;          // accents stylisés
+$font-script2: "Parisienne", cursive;           // accents secondaires
+$font-serif: "Libre Baskerville", serif;        // texte littéraire

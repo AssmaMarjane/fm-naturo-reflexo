@@ -1,0 +1,153 @@
+@import "../../style/main.scss";
+
+.fm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 130px;
+  background-color: $bleu-turkish;
+  @include lg {
+    height: 100px;
+  }
+}
+
+.logo_section {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 50%;
+  @include lg {
+    width: 70%;
+  }
+  @include md {
+    width: 75%;
+  }
+}
+.logo-fm {
+  width: 100px;
+  height: 100px;
+  color: $nude;
+  @include md {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.title-fm {
+  color: $nude;
+  font-size: 27px;
+  font-family: $font-script2;
+  font-weight: normal;
+  margin-left: $spacing-sm;
+  @include lg {
+    font-size: 20px;
+  }
+  @include md {
+    font-size: 15px;
+  }
+}
+
+.fm {
+  font-weight: bold;
+  font-size: 29px;
+  font-family: $font-script1;
+  @include lg {
+    font-size: 20px;
+  }
+}
+
+.menu_section {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.home-link {
+  font-family: $font-serif; // Libre Baskerville
+  font-weight: normal;
+  font-size: 17px;
+  text-decoration: none;
+  color: $nude;
+  margin-left: $spacing-sm;
+  &:hover {
+    color: $sauge-fonce;
+  }
+}
+
+.burger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $nude;
+  margin-right: $spacing-sm;
+}
+
+.mobile-menu {
+  display: none; // caché par défaut
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  background: $blanc;
+  border: 1px solid $nude;
+  border-radius: $radius-md 0 0 $radius-md;
+  padding: $spacing-sm $spacing-md;
+  width: 160px;
+  z-index: 100;
+
+  .home-link {
+    display: block;
+    color: $bleu-turkish;
+    font-size: 1rem;
+    margin: 12px 0;
+  }
+}
+
+/* --- Responsive --- */
+@include lg {
+  .mobile-menu {
+    position: absolute;
+    top: 75px;
+    left: 70%;
+    z-index: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    background: $bleu-turkish;
+    border-radius: $radius-md 0 0 $radius-md;
+    padding: $spacing-sm $spacing-md;
+    width: 110px;
+
+    /* caché par défaut */
+    transform: translateX(110%);
+    transition: transform 0.3s ease-in-out;
+
+    .home-link {
+      display: block;
+      color: $nude;
+      font-size: 1rem;
+      margin: 12px 0;
+    }
+    /* affichage quand le burger est ouvert */
+    &.open {
+      transform: translateX(0);
+      display: block;
+    }
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+@include sm {
+  .mobile-menu {
+    top: 65px;
+    left: 60%;
+    width: 100px;
+  }
+}

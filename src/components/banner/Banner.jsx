@@ -1,0 +1,46 @@
+import { useState, useEffect } from "react";
+import "./Banner.scss";
+import { Link } from "react-router-dom";
+
+import img1 from "../../assets/images/banner5.jpg";
+import img2 from "../../assets/images/banner7.webp";
+
+function Banner() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev === 0 ? 1 : 0));
+    }, 5000); // change toutes les 5s
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="banner">
+      <div className={`slide ${currentImage === 0 ? "active" : ""}`}>
+        <img src={img1} alt="Bannière 1" />
+        <div className="overlay">
+          <h2 className="title-fm">
+          <span className="fm">F M</span> <br />
+          Naturopathe__Réflexologue</h2>
+          <h3>La santé au coeur du bienêtre</h3>
+        </div>
+      </div>
+
+      <div className={`slide ${currentImage === 1 ? "active" : ""}`}>
+        <img src={img2} alt="Bannière 2" />
+        <div className="overlay">
+          <h2>Retrouvez votre bienêtre naturel</h2>
+
+          <button className="contact-btn">
+            <Link to="/contact" className="home-link">
+              Prendre rendez-vous
+            </Link>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Banner;

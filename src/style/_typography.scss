@@ -1,0 +1,34 @@
+// src/sass/_typography.scss
+@import "fonts";
+@import "variables";
+@import "breakpoints";
+
+body {
+  font-family: $font-primary;
+  font-size: $font-base;
+  line-height: 1.6;
+  color: $noir;
+  background-color: $blanc;
+}
+
+h1, .h1 {
+  font-family: $font-secondary;
+  font-size: $font-xxlarge;
+  font-weight: 700;
+  @include lg{ font-size: 2.5rem; }
+  @include md { font-size: 2rem; }
+}
+
+h2, .h2 {
+  font-family: $font-secondary;
+  font-size: $font-xlarge;
+  font-weight: 600;
+  @include md{ font-size: 1.8rem; }
+}
+
+p, .text {
+  font-family: $font-serif;
+  font-size: $font-medium;
+  margin-bottom: $spacing-sm;
+  @include sm { font-size: 0.95rem; }
+}
