@@ -1,7 +1,7 @@
 import React from "react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import router from "./routes/root.jsx";
 import "./style/main.scss";
 
@@ -27,8 +27,6 @@ const root = createRoot(domRoot);
  */
 root.render(
   <StrictMode>
-    <BrowserRouter basename="/fm-naturo-reflexo">
-      <RouterProvider router={router} />
-    </BrowserRouter>{" "}
+    <RouterProvider router={router} basename="/fm-naturo-reflexo" />
   </StrictMode>
 );
