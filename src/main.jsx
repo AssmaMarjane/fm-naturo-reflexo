@@ -27,6 +27,6 @@ const root = createRoot(domRoot);
  */
 root.render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router} basename="/fm-naturo-reflexo" />
   </StrictMode>
 );

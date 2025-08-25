@@ -15,7 +15,3 @@ function Naturopathie() {
 
 export default Naturopathie;
 
-/**
- * adapter les polices pr media queries et aussi responsive formulaire
- * 
- */
