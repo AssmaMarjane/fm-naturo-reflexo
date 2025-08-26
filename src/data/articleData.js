@@ -1,3 +1,9 @@
+import praticienImg from "../assets/images/banner4.jpg";
+import cabinet1Img from "../assets/images/banner5.jpg";
+
+
+
+
 export const articles = {
   naturopathie: {
     title: "Naturopathie",
@@ -76,7 +82,7 @@ export const articles = {
             l'organisme. L'accompagnement se construit selon vos besoins pour vous aider à retrouver énergie et harmonie.
 `,
       },
-            {
+      {
         subtitle: "Contre-indications",
         paragraph: `La réflexologie est déconseillée en cas de fractures récentes, infections aiguës, maladies graves ou grossesse sans accord médical. Il est important de prévenir le praticien de toute condition médicale avant la séance.`,
       },
@@ -87,30 +93,35 @@ export const articles = {
     ],
   },
 
-about: {
-  title: "À propos",
-  classPrefix: "about",
-  sections: [
-    {
-      subtitle: "Qui suis-je ?",
-      paragraph: `Je suis naturopathe et réflexologue passionnée par le bien-être naturel. Mon objectif est d'accompagner chacun de mes patients vers un équilibre physique et mental, grâce à des méthodes naturelles et personnalisées.`
-    },
-    {
-      subtitle: "Ma philosophie",
-      paragraph: `Je crois que chaque corps a une capacité naturelle à se régénérer. Mon rôle est de guider, soutenir et enseigner des pratiques simples pour que le bien-être devienne une habitude quotidienne.`
-    },
-    {
-      subtitle: "Ma pratique",
-      paragraph: `J'utilise la naturopathie pour renforcer le corps et la réflexologie pour harmoniser les tensions et stimuler les fonctions naturelles du corps. Chaque séance est adaptée à vos besoins, dans une approche douce et respectueuse.`
-    },
-    {
-      subtitle: "Mon approche globale",
-      paragraph: `Je considère la santé comme un équilibre entre le corps, l'esprit et l'environnement. Les conseils que je propose vont au-delà de la séance : alimentation, gestion du stress, relaxation et routines adaptées à chacun.`
-    },
-  ],
-  cta: [
-    { text: "Découvrir les prestations", link: "/prestations" },
-    { text: "Prendre rendez-vous", link: "/contact" },
-  ],
-}
+  about: {
+    title: "À propos",
+    classPrefix: "about",
+    sections: [
+      {
+        subtitle: "Qui suis-je ?",
+        paragraph: `Je suis naturopathe et réflexologue passionnée par le bien-être naturel. Mon objectif est d'accompagner chacun de mes patients vers un équilibre physique et mental, grâce à des méthodes naturelles et personnalisées.`,
+        image: praticienImg,
+      },
+      {
+        subtitle: "Ma philosophie",
+        paragraph: `Je crois que chaque corps a une capacité naturelle à se régénérer. Mon rôle est de guider, soutenir et enseigner des pratiques simples pour que le bien-être devienne une habitude quotidienne.`,
+
+        image: cabinet1Img,
+      },
+      {
+        subtitle: "Ma pratique",
+        paragraph: `J'utilise la naturopathie pour renforcer le corps et la réflexologie pour harmoniser les tensions et stimuler les fonctions naturelles du corps. Chaque séance est adaptée à vos besoins, dans une approche douce et respectueuse.`,
+        image: cabinet1Img,
+      },
+      {
+        subtitle: "Mon approche globale",
+        paragraph: `Je considère la santé comme un équilibre entre le corps, l'esprit et l'environnement. Les conseils que je propose vont au-delà de la séance : alimentation, gestion du stress, relaxation et routines adaptées à chacun.`,
+        image: praticienImg,
+      },
+    ],
+    cta: [
+      { text: "Découvrir les prestations", link: "/prestations" },
+      { text: "Prendre rendez-vous", link: "/contact" },
+    ],
+  },
 };
