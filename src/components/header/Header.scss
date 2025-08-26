@@ -118,10 +118,29 @@
     border-radius: $radius-md 0 0 $radius-md;
     padding: $spacing-sm $spacing-md;
     width: 110px;
-
     /* caché par défaut */
     transform: translateX(110%);
     transition: transform 0.3s ease-in-out;
+    @include lg {
+      top: 23%;
+      left: 83%;
+      width: 100px;
+    }
+    @include md {
+      top: 23%;
+      left: 79%;
+      width: 95px;
+    }
+    @include sm {
+      top: 28%;
+      left: 58%;
+      width: 90px;
+    }
+    @include xs {
+      top: 31%;
+      left: 52%;
+      width: 85px;
+    }
 
     .home-link {
       display: block;
@@ -141,13 +160,5 @@
   }
   .burger {
     display: block;
-  }
-}
-
-@include sm {
-  .mobile-menu {
-    top: 65px;
-    left: 60%;
-    width: 100px;
   }
 }
