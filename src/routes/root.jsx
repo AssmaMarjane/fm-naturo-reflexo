@@ -23,44 +23,47 @@ import Questions from "../pages/questions/Questions.jsx";
  * @type {Object}
  */
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <Error />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/prestations",
-        element: <Prestations />,
-      },
-      {
-        path: "/naturopathie",
-        element: <Naturopathie />,
-      },
-      {
-        path: "/reflexologie",
-        element: <Reflexologie />,
-      },
-      {
-        path: "/faq",
-        element: <Questions />,
-      },
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      errorElement: <Error />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "/prestations",
+          element: <Prestations />,
+        },
+        {
+          path: "/naturopathie",
+          element: <Naturopathie />,
+        },
+        {
+          path: "/reflexologie",
+          element: <Reflexologie />,
+        },
+        {
+          path: "/faq",
+          element: <Questions />,
+        },
 
-      {
-        path: "/a-propos",
-        element: <About />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-    ],
-  },
-]);
+        {
+          path: "/a-propos",
+          element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+      ],
+    },
+  ],
+  { basename: "/fm-naturo-reflexo" }
+);
 
 export default router;
 

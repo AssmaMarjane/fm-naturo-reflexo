@@ -1,4 +1,4 @@
-@import "../../style/main.scss";
+@use "../../style/main" as *;
 
 .fm-footer {
   display: flex;

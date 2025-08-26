@@ -1,4 +1,4 @@
-@import "../../style/main.scss";
+@use "../../style/main" as *;
 
 .naturo-container {
   background: linear-gradient(180deg, #104245 0%, #90a88f 25%, #a8b276 70%, #104245 95%); /* beige vers vert clair */
@@ -13,9 +13,11 @@
 /* Bloc article type papier naturel */
 .naturo-content {
   width: 70%;
-  background-color: #fffdf5; /* papier clair */
+  background-color: $brun; /* papier clair */
+   background: linear-gradient(180deg,  $vert-sombre 0%, $sauge-clair 20%, $vert-plante-clair 50%, $sauge-clair 75%); /* beige vers vert clair */
+
   padding: 40px 50px;
-  border: 2px solid #c7a17a; /* brun clair */
+  border: 2px solid $nude-rose; /* brun clair */
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(100, 140, 80, 0.15); /* ombre verte douce */
   display: flex;
@@ -24,12 +26,12 @@
 }
 
 .naturo-title {
-  color: #4a3f35;
+  color: $brun;
   font-family: "Libre Baskerville", serif;
   font-size: 32px;
   margin-bottom: 20px;
   text-align: center;
-  border-bottom: 2px solid #c7a17a; /* ligne sous le titre */
+  border-bottom: 2px solid $brun; /* ligne sous le titre */
   padding-bottom: 10px;
   @include lg {
     font-size: 25px;
@@ -40,12 +42,12 @@
 }
 
 .naturo-subtitle {
-  color: #4a3f35;
+  color: $brun;
   font-family: "Libre Baskerville", serif;
   font-size: 24px;
   margin-top: 30px;
   margin-bottom: 15px;
-  border-left: 4px solid #7a5c3d;
+  border-left: 4px solid $brun;
   padding-left: 10px;
   @include lg {
     font-size: 19px;
@@ -58,7 +60,7 @@
 .naturo-text {
   font-size: 16px;
   line-height: 1.8;
-  color: #4a3f35;
+  color: $brun;
   margin-bottom: 25px;
   text-align: justify;
   @include lg {
@@ -72,7 +74,7 @@
 .naturo-text:first-letter {
   font-size: 22px;
   font-weight: bold;
-  color: #7a5c3d;
+  color: $brun;
   @include lg {
     font-size: 20px;
   }
@@ -91,8 +93,8 @@
 }
 
 .cta-naturo-button {
-  background: linear-gradient(45deg, #a8b276, #90a88f);
-  color: #4a3f35;
+  background: linear-gradient(45deg, $brun, $sauge-fonce);
+  color: $nude;
   border: none;
   border-radius: 25px;
   padding: 12px 25px;
@@ -107,7 +109,7 @@
 .cta-naturo-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(100, 140, 80, 0.3);
-  background: linear-gradient(45deg, #90a88f, #a8b276);
+  background: linear-gradient(45deg, $sauge-fonce, $brun);
 }
 
 .decor-section {

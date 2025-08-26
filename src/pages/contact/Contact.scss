@@ -1,5 +1,7 @@
+@use "../../style/main" as *;
+
 .contact-container {
-  width: 60%;
+  width: 65%;
   background: linear-gradient(180deg, #104245 0%, #90a88f 25%, #a8b276 70%, #104245 95%); /* beige vers vert clair */
   display: flex;
   justify-content: center;
@@ -7,4 +9,17 @@
   min-height: 100vh;
   font-family: "Libre Baskerville", serif;
   position: relative;
+    @include lg {
+  width: 75%;
+  }
+    @include md {
+  width: 80%;
+  }
+    @include sm {
+  width: 90%;
+  }
+    @include xs {
+  width: 93%;
+  }
+
 }

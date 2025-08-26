@@ -1,4 +1,4 @@
-@import "../../style/main.scss";
+@use "../../style/main" as *;
 
 /* Container général avec dégradé doux type nature */
 .reflexo-container {
@@ -15,6 +15,8 @@
 .reflexo-content {
   width: 70%;
   background-color: #fffdf5; /* papier clair */
+   background: linear-gradient(180deg, $nude-rose 0%, $nude 20%, $nude-clair 50%, $nude-fonce 75%, $nude-clair 99%); /* beige vers vert clair */
+
   padding: 40px 50px;
   border: 2px solid #c7a17a; /* brun clair */
   border-radius: 15px;

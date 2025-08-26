@@ -1,4 +1,4 @@
-@import "../../style/main.scss";
+@use "../../style/main" as *;
 
 .about-container {
   background: linear-gradient(180deg, #104245 0%, #90a88f 25%, #a8b276 70%, #104245 95%); /* beige vers vert clair */

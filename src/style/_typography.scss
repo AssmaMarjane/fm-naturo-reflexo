@@ -1,7 +1,8 @@
 // src/sass/_typography.scss
-@import "fonts";
-@import "variables";
-@import "breakpoints";
+@use "fonts" as *;
+@use "variables" as *;
+@use "breakpoints" as *;
+@use "colors" as *;
 
 body {
   font-family: $font-primary;

@@ -1,8 +1,10 @@
-@import "colors";
-@import "fonts";
-@import "variables";
-@import "breakpoints";
-@import "typography";
+// main.scss
+@forward "colors";
+@forward "fonts";
+@forward "variables";
+@forward "breakpoints";
+@forward "typography";
+
 
 
 body,
