@@ -1,6 +1,10 @@
 @use "../../style/main" as *;
 
 .fm-header {
+  .fm-header {
+  position: relative; 
+}
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,15 +27,32 @@
   @include md {
     width: 75%;
   }
+    @include sm {
+    width: 80%;
+  }
+  @include xs {
+    width: 85%;
+  }
+
 }
 .logo-fm {
   width: 100px;
   height: 100px;
   color: $nude;
+  margin-left: 3%;
   @include md {
     width: 80px;
     height: 80px;
   }
+      @include sm {
+    width: 70px;
+    height: 70px;
+  }
+  @include xs {
+    width: 60px;
+    height: 60px;
+  }
+
 }
 
 .title-fm {
@@ -41,11 +62,18 @@
   font-weight: normal;
   margin-left: $spacing-sm;
   @include lg {
-    font-size: 20px;
+    font-size: 22px;
   }
   @include md {
+    font-size: 19px;
+  }
+    @include sm {
+    font-size: 17px;
+  }
+  @include xs {
     font-size: 15px;
   }
+
 }
 
 .fm {
@@ -53,8 +81,18 @@
   font-size: 29px;
   font-family: $font-script1;
   @include lg {
-    font-size: 20px;
+    font-size: 25px;
   }
+  @include md {
+    font-size: 21px;
+  }
+  @include sm {
+    font-size: 19px;
+  }
+  @include xs {
+    font-size: 17px;
+  }
+
 }
 
 .menu_section {
@@ -88,8 +126,8 @@
 .mobile-menu {
   display: none; // caché par défaut
   position: absolute;
-  top: 10%;
-  left: 50%;
+  top: 100%; // juste en dessous du header ou du burger
+  right: 0;
   background: $blanc;
   border: 1px solid $nude;
   border-radius: $radius-md 0 0 $radius-md;
@@ -109,9 +147,9 @@
 @include lg {
   .mobile-menu {
     position: absolute;
-    top: 75px;
-    left: 70%;
-    z-index: 1;
+  top: 100px; // juste en dessous du header ou du burger
+  right: 0;
+      z-index: 1;
     flex-direction: column;
     align-items: flex-start;
     background: $bleu-turkish;
@@ -122,24 +160,16 @@
     transform: translateX(110%);
     transition: transform 0.3s ease-in-out;
     @include lg {
-      top: 23%;
-      left: 83%;
       width: 100px;
     }
     @include md {
-      top: 23%;
-      left: 79%;
       width: 95px;
     }
     @include sm {
-      top: 28%;
-      left: 58%;
       width: 90px;
     }
     @include xs {
-      top: 31%;
-      left: 52%;
-      width: 85px;
+      width: 70px;
     }
 
     .home-link {
@@ -147,6 +177,23 @@
       color: $nude;
       font-size: 1rem;
       margin: 12px 0;
+          @include lg {
+                  font-size: 18px;
+
+    }
+    @include md {
+                        font-size: 16px;
+
+    }
+    @include sm {
+                        font-size: 14px;
+
+    }
+    @include xs {
+                        font-size: 12px;
+
+    }
+
     }
     /* affichage quand le burger est ouvert */
     &.open {

@@ -16,12 +16,23 @@
   }
 
   .arrow-toggle {
-    background-color: #f8e6d5;
-    width: 40px;
+    width: 45px;
     height: 40px;
     transition: transform 0.3s;
     align-self: center;
     margin: 3%;
+    @include md {
+      width: 35px;
+      height: 30px;
+    }
+    @include sm {
+      width: 25px;
+      height: 20px;
+    }
+    @include xs {
+      width: 20px;
+      height: 15px;
+    }
   }
 
   .toggleActive {

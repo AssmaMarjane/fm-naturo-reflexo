@@ -30,37 +30,115 @@
   }
 
   .overlay {
+    justify-items: center;
+    width: 60%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: $nude;
     text-align: center;
-    @media only screen and (max-width: 768px) {
-      top: 40%;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-    }
-
-    .contact-btn {
-      background-color: #104245;
-      color: #f8e6d5;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      font-size: 1.1rem;
-      border-radius: 5px;
+    @include xs {
+      width: 70%;
     }
   }
 }
 
 .slide.active {
   opacity: 1;
+}
+
+.fm-banner {
+  font-size: 29px;
+  font-family: $font-script1;
+  font-weight: bold;
+  @include lg {
+    font-size: 20px;
+  }
+  @include md {
+    font-size: 1.8rem;
+  }
+  @include sm {
+    font-size: 1.5rem;
+  }
+  @include xs {
+    font-size: 1.5rem;
+  }
+}
+
+.title-banner {
+  font-family: $font-script2; // Libre Baskerville
+  align-self: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+  @include md {
+    font-size: 1.8rem;
+  }
+  @include sm {
+    font-size: 1.5rem;
+  }
+  @include xs {
+    font-size: 1.3rem;
+  }
+}
+
+.title-banner-second {
+  font-family: $font-serif; // Libre Baskerville
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  @include md {
+    font-size: 1.4rem;
+  }
+  @include sm {
+    font-size: 1.2rem;
+  }
+  @include xs {
+    font-size: 1.1rem;
+  }
+}
+
+.subtitle-fm {
+  font-family: $font-serif; // Libre Baskerville
+
+  font-size: 1.3rem;
+  font-weight: 600;
+  @include md {
+    font-size: 1.1rem;
+  }
+  @include sm {
+    font-size: 1.1rem;
+  }
+  @include xs {
+    font-size: 1rem;
+  }
+}
+
+.contact-btn {
+  background-color: #104245;
+  color: $nude;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+.banner-link {
+  font-family: $font-serif; // Libre Baskerville
+  font-weight: normal;
+  font-size: 17px;
+  text-decoration: none;
+  color: $nude;
+  margin-left: $spacing-sm;
+  &:hover {
+    color: $sauge-fonce;
+  }
+  @include sm {
+    font-size: 15px;
+  }
+  @include xs {
+    font-size: 13px;
+  }
 }

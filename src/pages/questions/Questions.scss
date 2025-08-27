@@ -1,17 +1,73 @@
 @use "../../style/main" as *;
 
+.questions-container {
+  background: linear-gradient(180deg, $bleu-turkish 0%, $brun 30%, $brun-md 50%, $brun 75%, $bleu-turkish 95%); /* beige vers vert clair */
+  display: flex;
+  flex-direction: column;
+  font-family: "Libre Baskerville", serif;
+  width: 90%;
+}
 .questions-title {
   align-self: center;
   color: #f8e6d5;
   font-family: "Libre Baskerville";
   font-weight: normal;
-  margin-bottom: 3%;
+  margin: 10%;
+  @include lg {
+    font-size: 21px;
+  }
+  @include md {
+    font-size: 18px;
+  }
+  @include sm {
+    font-size: 15px;
+  }
+  @include xs {
+    font-size: 13px;
+  }
 }
 
 .questions-collapses {
+  align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #104245;
-  width: 85%;
+  width: 90%;
+  .fm-collapse.questions {
+    border-radius: 10px;
+    background-color: $brun-clair;
+    margin-bottom: 2%;
+border: none;
+  }
+  .collapse-title {
+    font-size: 22px;
+    @include lg {
+      font-size: 21px;
+    }
+    @include md {
+      font-size: 17px;
+    }
+    @include sm {
+      font-size: 15px;
+    }
+    @include xs {
+      font-size: 13px;
+    }
+  }
+  .collapse-text {
+    margin: 2%;
+    font-size: 19px;
+    @include lg {
+      font-size: 17px;
+    }
+    @include md {
+      font-size: 15px;
+    }
+    @include sm {
+      font-size: 13px;
+    }
+    @include xs {
+      font-size: 11px;
+    }
+  }
 }

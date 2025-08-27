@@ -2,7 +2,7 @@
 
 /* Container général avec dégradé doux type nature */
 .reflexo-container {
-  background: linear-gradient(180deg, #104245 0%, #f5d5a5 25%, #d9a273 70%, #104245 95%); /* beige vers vert clair */
+  background: linear-gradient(180deg, #104245 0%, #f5d5a5 25%, $brun-lgt 70%, #104245 95%); /* beige vers vert clair */
   display: flex;
   justify-content: center;
   padding: 50px 20px;
@@ -15,7 +15,7 @@
 .reflexo-content {
   width: 70%;
   background-color: #fffdf5; /* papier clair */
-   background: linear-gradient(180deg, $nude-rose 0%, $nude 20%, $nude-clair 50%, $nude-fonce 75%, $nude-clair 99%); /* beige vers vert clair */
+   background: linear-gradient(180deg, $bleu-turkish 0%, $brun 20%, $brun-lgt 50%, $brun 75%, $bleu-turkish 95%); /* beige vers vert clair */
 
   padding: 40px 50px;
   border: 2px solid #c7a17a; /* brun clair */
@@ -27,7 +27,7 @@
 }
 
 .reflexo-title {
-  color: #4a3f35;
+  color: $nude;
   font-family: "Libre Baskerville", serif;
   font-size: 32px;
   margin-bottom: 20px;
@@ -43,7 +43,7 @@
 }
 
 .reflexo-subtitle {
-  color: #4a3f35;
+  color: $nude;
   font-family: "Libre Baskerville", serif;
   font-size: 24px;
   margin-top: 30px;
@@ -61,7 +61,7 @@
 .reflexo-text {
   font-size: 16px;
   line-height: 1.8;
-  color: #4a3f35;
+  color: $nude;
   margin-bottom: 25px;
   text-align: justify;
   @include lg {
@@ -75,7 +75,7 @@
 .reflexo-text:first-letter {
   font-size: 22px;
   font-weight: bold;
-  color: #7a5c3d;
+  color: $nude-clair;
   @include lg {
     font-size: 20px;
   }

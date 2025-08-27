@@ -6,22 +6,29 @@ import { Link } from "react-router-dom";
 import "./Prestations.scss";
 
 const prestations = [
-  {
-    nom: "Séance Naturopathie",
+    {
+    nom: "Séance Naturopathie : 1ère consultation",
     duree: "1h",
-    prix: "60€",
+    prix: "85€",
+    description: "Bilan et conseils personnalisés pour votre bien-être.",
+  },
+
+  {
+    nom: "Séance Naturopathie : suivi",
+    duree: "45min",
+    prix: "65€",
     description: "Bilan et conseils personnalisés pour votre bien-être.",
   },
   {
     nom: "Séance Réflexologie Main",
     duree: "1h",
-    prix: "50€",
+    prix: "65€",
     description: "Relaxation et stimulation des points réflexes des mains.",
   },
   {
     nom: "Séance Réflexologie Pied",
     duree: "1h",
-    prix: "50€",
+    prix: "65€",
     description: "Relaxation et stimulation des points réflexes des pieds.",
   },
   {
@@ -33,7 +40,7 @@ const prestations = [
   {
     nom: "Séance Combo Naturopathie et Réflexologie",
     duree: "2h",
-    prix: "90€",
+    prix: "110€",
     description: "Bilan et conseils personnalisés pour votre bien-être et Relaxation et stimulation des points réflexes.",
   },
 ];
@@ -48,7 +55,7 @@ function Prestations() {
     <main>
       <div className="presta-container">
         <section className="prestations-section">
-          <h1>Nos Prestations</h1>
+          <h1>Mes Prestations</h1>
           <div className="prestations-grid">
             {prestations.map((p, i) => (
               <div key={i} className="prestation-widget" onClick={() => openModal(i)}>

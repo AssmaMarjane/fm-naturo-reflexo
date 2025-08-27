@@ -9,7 +9,7 @@ const links = [
   { name: "Naturopathie", path: "/naturopathie" },
   { name: "Réflexologie", path: "/reflexologie" },
   { name: "FAQ", path: "/faq" },
-  { name: "À propos", path: "/a-propos" },
+  { name: "Portrait", path: "/a-propos" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -20,7 +20,7 @@ function Header() {
     <header className="fm-header">
       {/* logo et titre ici */}
       <div className="logo_section">
-        <Link to="/" className="home-link">
+        <Link to="/" className="logo-link">
           <img src={fmLogo} className="logo-fm" alt="FM logo" />
         </Link>
 

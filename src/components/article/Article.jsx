@@ -5,11 +5,11 @@ function Article({ data }) {
 
   return (
         <div className={`${classPrefix}-content`}>
-          <h2 className={`${classPrefix}-title`}>{title}</h2>
+          <h1 className={`${classPrefix}-title`}>{title}</h1>
 
           {sections.map((section, index) => (
             <div key={index}>
-              {section.subtitle && <h3 className={`${classPrefix}-subtitle`}>{section.subtitle}</h3>}
+              {section.subtitle && <h2 className={`${classPrefix}-subtitle`}>{section.subtitle}</h2>}
               <p className={`${classPrefix}-text`}>{section.paragraph}</p>
             </div>
           ))}

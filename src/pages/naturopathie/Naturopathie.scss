@@ -1,7 +1,7 @@
 @use "../../style/main" as *;
 
 .naturo-container {
-  background: linear-gradient(180deg, #104245 0%, #90a88f 25%, #a8b276 70%, #104245 95%); /* beige vers vert clair */
+  background: linear-gradient(180deg, #104245 0%, #90a88f 25%, $vert-sombre3 70%, #104245 95%); /* beige vers vert clair */
   display: flex;
   justify-content: center;
   padding: 50px 20px;
@@ -14,7 +14,7 @@
 .naturo-content {
   width: 70%;
   background-color: $brun; /* papier clair */
-   background: linear-gradient(180deg,  $vert-sombre 0%, $sauge-clair 20%, $vert-plante-clair 50%, $sauge-clair 75%); /* beige vers vert clair */
+   background: linear-gradient(180deg,  $bleu-turkish 0%, $vert-sombre 15%, $vert-sombre2 50%, $vert-sombre 75%,$bleu-turkish 95% ); /* beige vers vert clair */
 
   padding: 40px 50px;
   border: 2px solid $nude-rose; /* brun clair */
@@ -26,7 +26,7 @@
 }
 
 .naturo-title {
-  color: $brun;
+  color: $brun-lgt;
   font-family: "Libre Baskerville", serif;
   font-size: 32px;
   margin-bottom: 20px;

@@ -94,7 +94,7 @@ export const articles = {
   },
 
   about: {
-    title: "À propos",
+    title: "Portrait",
     classPrefix: "about",
     sections: [
       {

@@ -20,20 +20,20 @@ function Banner() {
       <div className={`slide ${currentImage === 0 ? "active" : ""}`}>
         <img src={img1} alt="Bannière 1" />
         <div className="overlay">
-          <h2 className="title-fm">
-          <span className="fm">F M</span> <br />
+          <h2 className="title-banner">
+          <span className="fm-banner">F M</span> <br />
           Naturopathe__Réflexologue</h2>
-          <h3>La santé au coeur du bienêtre</h3>
+          <h3 className="subtitle-fm">La santé au coeur du bien-être</h3>
         </div>
       </div>
 
       <div className={`slide ${currentImage === 1 ? "active" : ""}`}>
         <img src={img2} alt="Bannière 2" />
         <div className="overlay">
-          <h2>Retrouvez votre bienêtre naturel</h2>
+          <h2 className="title-banner-second" >Retrouvez votre bien-être naturel</h2>
 
           <button className="contact-btn">
-            <Link to="/contact" className="home-link">
+            <Link to="/contact" className="banner-link">
               Prendre rendez-vous
             </Link>
           </button>

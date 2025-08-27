@@ -7,12 +7,14 @@ import questionsData from "../../data/questionsData";
 function Questions() {
   return (
     <main>
-      <h2 className="questions-title">Questions fréquentes</h2>
+      <div className="questions-container">
+        <h2 className="questions-title">Questions fréquentes</h2>
 
-      <div className="questions-collapses">
-        {questionsData.map((q, index) => (
-          <Collapse key={index} title={q.title} content={q.content} />
-        ))}
+        <div className="questions-collapses">
+          {questionsData.map((question, index) => (
+            <Collapse key={index} title={question.title} content={question.content} className={question.classPrefix} />
+          ))}
+        </div>
       </div>
     </main>
   );
