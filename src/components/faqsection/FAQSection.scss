@@ -26,6 +26,16 @@
     animation-iteration-count: 1;
     transition-timing-function: ease-out;
   }
+    @include md {
+  font-size: 14px;
+  }
+  @include sm {
+  font-size: 13px;
+  }
+  @include xs {
+  font-size: 12px;
+  }
+
 
 }
 
