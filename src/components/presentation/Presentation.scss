@@ -9,19 +9,19 @@
   background: linear-gradient(180deg, $bleu-turkish 0%, $brun 25%, $vert-sombre 45%, $bleu-turkish 75%);
 
   .presentation-title {
-      color: $brun-clair;
+    color: $brun-clair;
     font-family: $font-script1;
     font-weight: normal;
-  font-size: 40px;
-  font-weight: normal;
-  margin: 10%;
+    font-size: 40px;
+    font-weight: normal;
+    margin: 10%;
     text-align: center;
-  @include md {
-    font-size: 35px;
-  }
-  @include sm {
-    font-size: 30px;
-  }
+    @include md {
+      font-size: 35px;
+    }
+    @include sm {
+      font-size: 30px;
+    }
   }
 
   .presentation-section {
@@ -41,22 +41,36 @@
       font-weight: normal;
       margin-left: $spacing-sm;
       @include lg {
-        font-size: 28px;
+        font-size: 31px;
       }
       @include md {
+        font-size: 29px;
+      }
+      @include sm {
         font-size: 27px;
+      }
+
+      @include xs {
+        font-size: 23px;
       }
     }
     .presentation-text {
-      font-size: 19px;
+      font-size: 20px;
       font-family: $font-secondary;
       font-weight: normal;
       margin-left: $spacing-sm;
       @include lg {
-        font-size: 20px;
+        font-size: 19px;
       }
       @include md {
+        font-size: 17px;
+      }
+      @include sm {
         font-size: 15px;
+      }
+
+      @include xs {
+        font-size: 13px;
       }
     }
     .text {
@@ -89,42 +103,36 @@
           transform: scale(1.05);
         }
         @include lg {
-          width: 200px;
-          height: 200px;
+          width: 210px;
+          height: 210px;
         }
         @include md {
+          width: 190px;
+          height: 190px;
+        }
+        @include sm {
           width: 150px;
           height: 150px;
         }
-        @include sm {
-          width: 100px;
-          height: 100px;
-        }
 
         @include xs {
-          width: 80px;
-          height: 80px;
+          width: 120px;
+          height: 120px;
         }
       }
     }
   }
 
-  .cta-buttons {
+  .cta-about-button {
     display: flex;
     justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
+    background: linear-gradient(45deg, $brun, $bleu-turkish);
+    color: #fffdf5;
+    border-radius: 25px;
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.5);
 
-    .cta-btn {
-      padding: 0.8rem 2rem;
-      background-color: #104245;
-      color: white;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: background 0.3s;
-      &:hover {
-        background-color: #0e3334;
-      }
-    }
   }
+
 }
