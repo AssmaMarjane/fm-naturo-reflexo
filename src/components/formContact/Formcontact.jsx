@@ -81,7 +81,7 @@ function FormContact() {
         <div className="input-wrapper">
           <label htmlFor="prestation">Sélectionnez une prestation</label>
           <select id="prestation" name="prestation" value={formData.prestation} onChange={handleChange}>
-            <option value="">-- Choisissez une prestation --</option>
+            <option value="">Choisir une prestation </option>
             {prestations.map((p, index) => (
               <option key={index} value={p.nom}>
                 {p.nom} ({p.duree} | {p.prix})
@@ -94,7 +94,7 @@ function FormContact() {
           <label htmlFor="disponibilite">Disponibilité</label>
           {/* Sélection date et heure */}
           <select name="date" value={formData.date} onChange={handleChange} required={!!formData.prestation}>
-            <option value="">-- Choisir une date --</option>
+            <option value="">Choisir une date</option>
             {Object.keys(dispoState).map((d) => (
               <option key={d} value={d}>
                 {d}

@@ -15,7 +15,7 @@
 .reflexo-content {
   width: 70%;
   background-color: #fffdf5; /* papier clair */
-   background: linear-gradient(180deg, $bleu-turkish 0%, $brun 20%, $brun-lgt 50%, $brun 75%, $bleu-turkish 95%); /* beige vers vert clair */
+  background: linear-gradient(180deg, $bleu-turkish 0%, $brun 20%, $brun-lgt 50%, $brun 75%, $bleu-turkish 95%); /* beige vers vert clair */
 
   padding: 40px 50px;
   border: 2px solid #c7a17a; /* brun clair */
@@ -28,8 +28,8 @@
 
 .reflexo-title {
   color: $nude;
-    font-family: $font-script1;
-    font-weight: normal;
+  font-family: $font-script1;
+  font-weight: normal;
   font-size: 40px;
   margin-bottom: 20px;
   text-align: center;

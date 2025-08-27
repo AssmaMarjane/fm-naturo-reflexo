@@ -7,14 +7,14 @@ import "./Prestations.scss";
 
 const prestations = [
     {
-    nom: "Séance Naturopathie : 1ère consultation",
+    nom: "Séance Naturopathie: 1ère consultation",
     duree: "1h",
     prix: "85€",
     description: "Bilan et conseils personnalisés pour votre bien-être.",
   },
 
   {
-    nom: "Séance Naturopathie : suivi",
+    nom: "Séance Naturopathie: suivi",
     duree: "45min",
     prix: "65€",
     description: "Bilan et conseils personnalisés pour votre bien-être.",
