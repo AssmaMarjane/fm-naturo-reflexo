@@ -9,7 +9,7 @@ import img3 from "../../assets/images/widget3.png";
 function Widget() {
   return (
     <div className="widget_section">
-      <h2 className="section_title">Mes Services</h2>
+      <h2 className="section_title">Mes Prestations</h2>
       <div className="widget_content">
         <Link to="/naturopathie" className="widget">
           <img src={img1} alt="Widget 1" className="widget_img" />

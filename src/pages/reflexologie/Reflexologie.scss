@@ -28,17 +28,18 @@
 
 .reflexo-title {
   color: $nude;
-  font-family: "Libre Baskerville", serif;
-  font-size: 32px;
+    font-family: $font-script1;
+    font-weight: normal;
+  font-size: 40px;
   margin-bottom: 20px;
   text-align: center;
   border-bottom: 2px solid #c7a17a; /* ligne sous le titre */
   padding-bottom: 10px;
   @include lg {
-    font-size: 25px;
+    font-size: 35px;
   }
   @include md {
-    font-size: 22px;
+    font-size: 30px;
   }
 }
 

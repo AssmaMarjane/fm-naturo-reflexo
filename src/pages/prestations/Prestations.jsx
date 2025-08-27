@@ -55,7 +55,7 @@ function Prestations() {
     <main>
       <div className="presta-container">
         <section className="prestations-section">
-          <h1>Mes Prestations</h1>
+          <h1 className="prestations-title">Mes Prestations</h1>
           <div className="prestations-grid">
             {prestations.map((p, i) => (
               <div key={i} className="prestation-widget" onClick={() => openModal(i)}>

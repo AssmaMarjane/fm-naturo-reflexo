@@ -1,3 +1,5 @@
+@use "../../style/main" as *;
+
 .prestations-section {
   text-align: center;
   background: linear-gradient(180deg, #104245 0%, #90a88f 25%, #a8b276 50% ,#90a88f 70%, #104245 100%); /* beige vers vert clair */
@@ -6,6 +8,11 @@
   font-family: "Libre Baskerville", serif;
 }
 
+.prestations-title{
+  color: $brun;
+    font-family: $font-script1;
+
+}
 .prestations-grid {
   display: flex;
   flex-wrap: wrap;

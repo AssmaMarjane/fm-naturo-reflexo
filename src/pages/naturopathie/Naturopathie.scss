@@ -14,7 +14,7 @@
 .naturo-content {
   width: 70%;
   background-color: $brun; /* papier clair */
-   background: linear-gradient(180deg,  $bleu-turkish 0%, $vert-sombre 15%, $vert-sombre2 50%, $vert-sombre 75%,$bleu-turkish 95% ); /* beige vers vert clair */
+   background: linear-gradient(180deg,  $bleu-turkish 0%, $vert-sombre 20%, $vert-sombre2 50%, $vert-sombre 75%,$bleu-turkish 95% ); /* beige vers vert clair */
 
   padding: 40px 50px;
   border: 2px solid $nude-rose; /* brun clair */
@@ -26,18 +26,19 @@
 }
 
 .naturo-title {
-  color: $brun-lgt;
-  font-family: "Libre Baskerville", serif;
-  font-size: 32px;
+  color: $brun-clair;
+    font-family: $font-script1;
+    font-weight: normal;
+  font-size: 40px;
   margin-bottom: 20px;
   text-align: center;
   border-bottom: 2px solid $brun; /* ligne sous le titre */
   padding-bottom: 10px;
   @include lg {
-    font-size: 25px;
+    font-size: 35px;
   }
   @include md {
-    font-size: 22px;
+    font-size: 30px;
   }
 }
 

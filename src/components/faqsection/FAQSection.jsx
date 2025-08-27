@@ -7,7 +7,7 @@ import Collapse from "../collapse/Collapse";
 function FAQSection() {
   return (
     <section className="faq-section">
-      <h1 className="faq-title">Questions fréquentes</h1>
+      <h2 className="faq-title">Questions fréquentes</h2>
 
       <div className="faq-collapses">
         <Collapse
