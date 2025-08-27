@@ -1,5 +1,7 @@
-import praticienImg from "../assets/images/banner4.jpg";
-import cabinet1Img from "../assets/images/banner5.jpg";
+import praticienImg from "../assets/images/naturo2.jpg";
+import cabinet1Img from "../assets/images/cabinet.jpg";
+import reflexImg from "../assets/images/reflexo.jpg";
+import natImg from "../assets/images/naturo.jpg";
 
 
 
@@ -111,12 +113,12 @@ export const articles = {
       {
         subtitle: "Ma pratique",
         paragraph: `J'utilise la naturopathie pour renforcer le corps et la réflexologie pour harmoniser les tensions et stimuler les fonctions naturelles du corps. Chaque séance est adaptée à vos besoins, dans une approche douce et respectueuse.`,
-        image: cabinet1Img,
+        image: reflexImg,
       },
       {
         subtitle: "Mon approche globale",
         paragraph: `Je considère la santé comme un équilibre entre le corps, l'esprit et l'environnement. Les conseils que je propose vont au-delà de la séance : alimentation, gestion du stress, relaxation et routines adaptées à chacun.`,
-        image: praticienImg,
+        image: natImg,
       },
     ],
     cta: [

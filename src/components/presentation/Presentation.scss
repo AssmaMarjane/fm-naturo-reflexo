@@ -1,0 +1,130 @@
+@use "../../style/main" as *;
+
+.presentation {
+  width: 100%;
+  color: $nude;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, $bleu-turkish 0%, $brun 25%, $vert-sombre 45%, $bleu-turkish 75%);
+
+  .presentation-title {
+      color: $brun-clair;
+    font-family: $font-script1;
+    font-weight: normal;
+  font-size: 40px;
+  font-weight: normal;
+  margin: 10%;
+    text-align: center;
+  @include md {
+    font-size: 35px;
+  }
+  @include sm {
+    font-size: 30px;
+  }
+  }
+
+  .presentation-section {
+    display: flex;
+    align-items: center;
+    margin: 3rem 0;
+
+    &.left {
+      flex-direction: row;
+    }
+    &.right {
+      flex-direction: row-reverse;
+    }
+    .presentation-subtitle {
+      font-size: 35px;
+      font-family: $font-script2;
+      font-weight: normal;
+      margin-left: $spacing-sm;
+      @include lg {
+        font-size: 28px;
+      }
+      @include md {
+        font-size: 27px;
+      }
+    }
+    .presentation-text {
+      font-size: 19px;
+      font-family: $font-secondary;
+      font-weight: normal;
+      margin-left: $spacing-sm;
+      @include lg {
+        font-size: 20px;
+      }
+      @include md {
+        font-size: 15px;
+      }
+    }
+    .text {
+      flex: 1;
+      padding: 1rem 2rem;
+      color: $nude;
+      @include lg {
+        font-size: 20px;
+      }
+      @include md {
+        font-size: 18px;
+      }
+    }
+
+    .image-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 50%; // pour la bulle
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+        overflow: hidden;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+        @include lg {
+          width: 200px;
+          height: 200px;
+        }
+        @include md {
+          width: 150px;
+          height: 150px;
+        }
+        @include sm {
+          width: 100px;
+          height: 100px;
+        }
+
+        @include xs {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    .cta-btn {
+      padding: 0.8rem 2rem;
+      background-color: #104245;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s;
+      &:hover {
+        background-color: #0e3334;
+      }
+    }
+  }
+}
