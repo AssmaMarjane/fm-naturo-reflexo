@@ -4,46 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./Prestations.scss";
-
-const prestations = [
-    {
-    nom: "Séance Naturopathie: 1ère consultation",
-    duree: "1h",
-    prix: "85€",
-    description: "Bilan et conseils personnalisés pour votre bien-être.",
-  },
-
-  {
-    nom: "Séance Naturopathie: suivi",
-    duree: "45min",
-    prix: "65€",
-    description: "Bilan et conseils personnalisés pour votre bien-être.",
-  },
-  {
-    nom: "Séance Réflexologie Main",
-    duree: "1h",
-    prix: "65€",
-    description: "Relaxation et stimulation des points réflexes des mains.",
-  },
-  {
-    nom: "Séance Réflexologie Pied",
-    duree: "1h",
-    prix: "65€",
-    description: "Relaxation et stimulation des points réflexes des pieds.",
-  },
-  {
-    nom: "Séance réflexologie Combo Main & Pied",
-    duree: "2h",
-    prix: "90€",
-    description: "Séance complète pour un bien-être total.",
-  },
-  {
-    nom: "Séance Combo Naturopathie et Réflexologie",
-    duree: "2h",
-    prix: "110€",
-    description: "Bilan et conseils personnalisés pour votre bien-être et Relaxation et stimulation des points réflexes.",
-  },
-];
+import prestations from "../../data/prestations.json";
 
 function Prestations() {
   const [selected, setSelected] = useState(null);
@@ -59,8 +20,8 @@ function Prestations() {
           <div className="prestations-grid">
             {prestations.map((p, i) => (
               <div key={i} className="prestation-widget" onClick={() => openModal(i)}>
-                <h3>{p.nom}</h3>
-                <p>
+                <h3 className="widget-title">{p.nom}</h3>
+                <p className="widget-text">
                   {p.duree} | {p.prix}
                 </p>
               </div>
@@ -70,14 +31,14 @@ function Prestations() {
           {selected !== null && (
             <div className="modal-overlay" onClick={closeModal}>
               <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <h2>{prestations[selected].nom}</h2>
-                <p>
+                <h3 className="modal-title">{prestations[selected].nom}</h3>
+                <p className="modal-text">
                   <strong>Durée :</strong> {prestations[selected].duree}
                 </p>
-                <p>
+                <p className="modal-text">
                   <strong>Prix :</strong> {prestations[selected].prix}
                 </p>
-                <p>{prestations[selected].description}</p>
+                <p className="modal-text">{prestations[selected].description}</p>
                 <button onClick={closeModal} className="presta-button">Fermer</button>
                 <Link to="/contact" className="presta-button" state={{ prestation: prestations[selected].nom }}>
                   Prendre rendez-vous

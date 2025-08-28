@@ -3,14 +3,8 @@ import "./FormContact.scss";
 import dispoData from "../../data/dispo.json";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import prestations from "../../data/prestations.json";
 
-const prestations = [
-  { nom: "Séance Naturopathie", duree: "1h", prix: "60€" },
-  { nom: "Séance Réflexologie Main", duree: "1h", prix: "50€" },
-  { nom: "Séance Réflexologie Pied", duree: "1h", prix: "50€" },
-  { nom: "Combo Main & Pied", duree: "2h", prix: "90€" },
-  { nom: "Séance Combo Naturopathie et Réflexologie", duree: "2h", prix: "90€" },
-];
 
 function FormContact() {
   const location = useLocation();
@@ -24,7 +18,7 @@ function FormContact() {
     date: "",
     message: "",
   });
-
+console.log(location.state)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({

@@ -2,8 +2,8 @@
 
 .fm-header {
   .fm-header {
-  position: relative; 
-}
+    position: relative;
+  }
 
   display: flex;
   align-items: center;
@@ -27,13 +27,12 @@
   @include md {
     width: 75%;
   }
-    @include sm {
+  @include sm {
     width: 80%;
   }
   @include xs {
     width: 85%;
   }
-
 }
 .logo-fm {
   width: 100px;
@@ -44,7 +43,7 @@
     width: 80px;
     height: 80px;
   }
-      @include sm {
+  @include sm {
     width: 70px;
     height: 70px;
   }
@@ -52,7 +51,6 @@
     width: 60px;
     height: 60px;
   }
-
 }
 
 .title-fm {
@@ -67,13 +65,12 @@
   @include md {
     font-size: 19px;
   }
-    @include sm {
+  @include sm {
     font-size: 17px;
   }
   @include xs {
     font-size: 15px;
   }
-
 }
 
 .fm {
@@ -92,7 +89,6 @@
   @include xs {
     font-size: 17px;
   }
-
 }
 
 .menu_section {
@@ -147,9 +143,9 @@
 @include lg {
   .mobile-menu {
     position: absolute;
-  top: 100px; // juste en dessous du header ou du burger
-  right: 0;
-      z-index: 1;
+    top: 100px; // juste en dessous du header ou du burger
+    right: 0;
+    z-index: 1;
     flex-direction: column;
     align-items: flex-start;
     background: $bleu-turkish;
@@ -177,23 +173,18 @@
       color: $nude;
       font-size: 1rem;
       margin: 12px 0;
-          @include lg {
-                  font-size: 18px;
-
-    }
-    @include md {
-                        font-size: 16px;
-
-    }
-    @include sm {
-                        font-size: 14px;
-
-    }
-    @include xs {
-                        font-size: 12px;
-
-    }
-
+      @include lg {
+        font-size: 18px;
+      }
+      @include md {
+        font-size: 16px;
+      }
+      @include sm {
+        font-size: 14px;
+      }
+      @include xs {
+        font-size: 12px;
+      }
     }
     /* affichage quand le burger est ouvert */
     &.open {
