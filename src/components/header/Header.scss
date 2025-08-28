@@ -39,6 +39,12 @@
   height: 100px;
   color: $nude;
   margin-left: 3%;
+    &:hover {
+    transform: scale(1.1);
+    animation-iteration-count: 1;
+    transition-timing-function: ease-out;
+  }
+
   @include md {
     width: 80px;
     height: 80px;
@@ -117,6 +123,11 @@
   cursor: pointer;
   color: $nude;
   margin-right: $spacing-sm;
+  &:hover {
+    transform: scale(1.2);
+    animation-iteration-count: 1;
+    transition-timing-function: ease-out;
+  }
 }
 
 .mobile-menu {
@@ -124,7 +135,7 @@
   position: absolute;
   top: 100%; // juste en dessous du header ou du burger
   right: 0;
-  background: $blanc;
+  background: $nude;
   border: 1px solid $bleu-turkish;
   border-radius: $radius-md 0 0 $radius-md;
   padding: $spacing-sm $spacing-md;
@@ -199,5 +210,6 @@
   .burger {
     display: block;
     color: $nude;
+    background: none;
   }
 }

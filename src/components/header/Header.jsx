@@ -1,7 +1,7 @@
 import "./Header.scss";
 import fmLogo from "../../assets/logos/logofm_nude.png";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const links = [
   { name: "Accueil", path: "/" },
@@ -15,7 +15,13 @@ const links = [
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
   console.log("Menu ouvert ?", isOpen);
+
+    useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+  
   return (
     <header className="fm-header">
       {/* logo et titre ici */}
