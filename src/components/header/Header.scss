@@ -125,7 +125,7 @@
   top: 100%; // juste en dessous du header ou du burger
   right: 0;
   background: $blanc;
-  border: 1px solid $nude;
+  border: 1px solid $bleu-turkish;
   border-radius: $radius-md 0 0 $radius-md;
   padding: $spacing-sm $spacing-md;
   width: 160px;
@@ -198,5 +198,6 @@
   }
   .burger {
     display: block;
+    color: $nude;
   }
 }
