@@ -1,32 +1,23 @@
 @use "../../style/main" as *;
 
 .naturo-container {
-  background: linear-gradient(180deg, #104245 0%, #90a88f 25%, $vert-sombre3 70%, #104245 95%); /* beige vers vert clair */
+  background: linear-gradient(180deg, $bleu-turkish 0%, $vert-sombre 25%, $vert-sombre3 70%, $bleu-turkish 95%);
   display: flex;
   justify-content: center;
   padding: 50px 20px;
   min-height: 100vh;
-  font-family: "Libre Baskerville", serif;
+  font-family: $font-serif;
   position: relative;
 }
 
-/* Bloc article type papier naturel */
 .naturo-content {
   width: 70%;
-  background-color: $brun; /* papier clair */
-  background: linear-gradient(
-    180deg,
-    $bleu-turkish 0%,
-    $vert-sombre 20%,
-    $vert-sombre2 50%,
-    $vert-sombre 75%,
-    $bleu-turkish 95%
-  ); /* beige vers vert clair */
-
+  background-color: $brun;
+  background: linear-gradient(180deg, $bleu-turkish 0%, $vert-sombre 20%, $vert-sombre2 50%, $vert-sombre 75%, $bleu-turkish 95%);
   padding: 40px 50px;
-  border: 2px solid $nude-rose; /* brun clair */
+  border: 2px solid $nude-rose;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(100, 140, 80, 0.15); /* ombre verte douce */
+  box-shadow: 0 8px 20px rgba(100, 140, 80, 0.15);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -57,7 +48,7 @@
   line-height: 1.8;
   color: $brun;
   margin-bottom: 25px;
-  text-align: justify;
+  text-align: start;
   @include lg {
     font-size: 15px;
   }
@@ -124,7 +115,7 @@
     width: 50px;
     height: auto;
     opacity: 0.6;
-    transition: all 0.5s ease; // un peu translucide pour un effet décor
+    transition: all 0.5s ease;
   }
 
   .deco1 {
@@ -134,7 +125,6 @@
   }
   .deco3 {
     width: 65px;
-
     bottom: 50px;
     right: -140px;
     transform: translateX(-50%) rotate(-15deg);
@@ -147,7 +137,6 @@
   }
   .deco5 {
     width: 65px;
-
     bottom: -90px;
     left: 50%;
     transform: translateX(-50%);
