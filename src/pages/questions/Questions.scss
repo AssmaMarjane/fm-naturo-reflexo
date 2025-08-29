@@ -1,20 +1,11 @@
 @use "../../style/main" as *;
 
 .questions-container {
-  background: linear-gradient(
-    180deg,
-    $bleu-turkish 0%,
-    $brun 35%,
-    $brun-md 54%,
-    $brun-lgt 60%,
-    $brun-md 66%,
-    $brun 78%,
-    $bleu-turkish 90%
-  ); /* beige vers vert clair */
   display: flex;
   flex-direction: column;
-  font-family: "Libre Baskerville", serif;
+  font-family: $font-serif;
   width: 90%;
+  background: linear-gradient(180deg, $bleu-turkish 0%, $brun 35%, $brun-md 54%, $brun-lgt 60%, $brun-md 66%, $brun 78%, $bleu-turkish 90%);
 }
 
 .questions-collapses {
