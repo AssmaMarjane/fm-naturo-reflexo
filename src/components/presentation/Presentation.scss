@@ -3,7 +3,6 @@
 .presentation {
   width: 100%;
   color: $nude;
-
   max-width: 1200px;
   margin: 0 auto;
   background: linear-gradient(180deg, $bleu-turkish 0%, $brun 25%, $vert-sombre 50%, $bleu-turkish 75%);
@@ -12,7 +11,6 @@
     display: flex;
     align-items: center;
     margin: 3rem 0;
-
     &.left {
       flex-direction: row;
     }
@@ -33,7 +31,6 @@
       @include sm {
         font-size: 27px;
       }
-
       @include xs {
         font-size: 23px;
       }
@@ -52,7 +49,6 @@
       @include sm {
         font-size: 15px;
       }
-
       @include xs {
         font-size: 13px;
       }
@@ -78,11 +74,10 @@
         width: 250px;
         height: 250px;
         object-fit: cover;
-        border-radius: 50%; // pour la bulle
+        border-radius: 50%; //  bulle
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s;
         overflow: hidden;
-
         &:hover {
           transform: scale(1.05);
         }
