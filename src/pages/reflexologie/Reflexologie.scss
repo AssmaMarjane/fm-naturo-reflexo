@@ -1,8 +1,7 @@
 @use "../../style/main" as *;
 
-/* Container général avec dégradé doux type nature */
 .reflexo-container {
-  background: linear-gradient(180deg, #104245 0%, #f5d5a5 25%, $brun-lgt 70%, #104245 95%); /* beige vers vert clair */
+  background: linear-gradient(180deg, $bleu-turkish 0%, $nude-clair 25%, $brun-lgt 70%, $bleu-turkish 95%); 
   display: flex;
   justify-content: center;
   padding: 50px 20px;
@@ -11,14 +10,12 @@
   position: relative;
 }
 
-/* Bloc article type papier naturel */
 .reflexo-content {
   width: 70%;
-  background-color: #fffdf5; /* papier clair */
-  background: linear-gradient(180deg, $bleu-turkish 0%, $brun 20%, $brun-lgt 50%, $brun 75%, $bleu-turkish 95%); /* beige vers vert clair */
-
+  background-color: $nude; 
+  background: linear-gradient(180deg, $bleu-turkish 0%, $brun 20%, $brun-lgt 50%, $brun 75%, $bleu-turkish 95%);
   padding: 40px 50px;
-  border: 2px solid #c7a17a; /* brun clair */
+  border: 2px solid $brun-lgt; 
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(100, 140, 80, 0.15); /* ombre verte douce */
   display: flex;
@@ -27,7 +24,7 @@
 }
 
 .reflexo-title {
-  border-bottom: 2px solid #c7a17a; /* ligne sous le titre */
+  border-bottom: 2px solid $brun-lgt; /* ligne sous le titre */
 }
 
 .reflexo-subtitle {
@@ -36,7 +33,7 @@
   color: $nude;
   margin-top: 30px;
   margin-bottom: 15px;
-  border-left: 4px solid #7a5c3d;
+  border-left: 4px solid $nude-fonce;
   padding-left: 10px;
   @include lg {
     font-size: 19px;
@@ -82,29 +79,29 @@
 }
 
 .cta-reflexo-button {
-  background: linear-gradient(45deg, #7a5c3d, #c7a17a);
+  background: linear-gradient(45deg, $brun, $brun-lgt);
   color: #fffdf5;
   border: none;
   border-radius: 25px;
-  padding: 12px 25px;
+  padding: 12px 23px;
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(100, 140, 80, 0.2);
   @include md {
-    font-size: 14px;
-  }
-  @include sm {
     font-size: 13px;
   }
-  @include xs {
+  @include sm {
     font-size: 12px;
+  }
+  @include xs {
+    font-size: 11px;
   }
 }
 
 .cta-reflexo-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(100, 140, 80, 0.3);
-  background: linear-gradient(45deg, #c7a17a, #7a5c3d);
+  background: linear-gradient(45deg, $brun-lgt, $brun);
 }

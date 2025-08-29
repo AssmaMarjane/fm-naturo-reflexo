@@ -90,13 +90,13 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(100, 140, 80, 0.2);
   @include md {
-    font-size: 14px;
-  }
-  @include sm {
     font-size: 13px;
   }
-  @include xs {
+  @include sm {
     font-size: 12px;
+  }
+  @include xs {
+    font-size: 11px;
   }
 }
 
