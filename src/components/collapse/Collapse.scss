@@ -1,9 +1,9 @@
 @use "../../style/main" as *;
 
 .fm-collapse {
-  border: 1px solid #f8e6d5;
+  border: 1px solid $nude;
   border-radius: 20px;
-  background-color: #f8e6d5;
+  background-color: $nude;
   margin-bottom: 2%;
   .collapse-toggle {
     all: unset;
@@ -71,7 +71,6 @@
   color: $bleu-turkish;
   align-self: center;
   margin: 3%;
-
   font-size: 19px;
   @include lg {
     font-size: 17px;
