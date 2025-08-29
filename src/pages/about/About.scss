@@ -1,11 +1,11 @@
 @use "../../style/main" as *;
 
 .about-container {
-  background: linear-gradient(180deg, #104245 0%, #90a88f 25%, #a8b276 70%, #104245 95%); /* beige vers vert clair */
+  background: linear-gradient(180deg, $bleu-turkish 0%, $vert-sombre 25%, $vert-plante 70%, $bleu-turkish 95%); 
   display: flex;
   justify-content: center;
   padding: 50px 20px;
   min-height: 100vh;
-  font-family: "Libre Baskerville", serif;
+  font-family: $font-serif;
   position: relative;
 }
