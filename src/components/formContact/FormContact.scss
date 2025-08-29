@@ -2,7 +2,6 @@
 @use "../../style/main" as *;
 
 .contact-form-section {
-  font-family: $font-serif;
   font-weight: normal;
   box-sizing: border-box;
   width: 65%;
@@ -21,11 +20,10 @@
   }
 }
 
-.contact-form-section h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.9rem;
-
+.form-title {
+  font-family: $font-serif;
+  color: $brun;
+  font-weight: bold;
   @include md {
     font-size: 1.7rem;
   }
@@ -101,14 +99,12 @@
   @include xs {
     font-size: 0.7rem;
   }
-
-  
 }
 
 .submit-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(100, 140, 80, 0.3);
-    background: linear-gradient(45deg, $vert-sombre, $vert-plante);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(100, 140, 80, 0.3);
+  background: linear-gradient(45deg, $vert-sombre, $vert-plante);
 }
 
 .error-message {
@@ -119,7 +115,7 @@
   font-family: $font-serif;
   font-weight: normal;
   font-size: 1rem;
-    padding: 7px;
+  padding: 7px;
 
   border: 1px solid #ccc;
   border-radius: 4px;

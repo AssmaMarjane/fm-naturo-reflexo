@@ -54,7 +54,7 @@ console.log(location.state)
 
   return (
     <section className="contact-form-section">
-      <h1>Contact / Réservation</h1>
+      <h2 className="form-title">Contact / Réservation</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-wrapper">
           <label htmlFor="nom">Nom</label>

@@ -11,7 +11,7 @@ function Intro() {
   return (
     <div className="intro_section">
       <div className="decor-section">
-        <h2 className="decor-title">Découvrez mes méthodes naturelles pour retrouver vitalité et harmonie.</h2>
+        <p className="decor-title">Découvrez mes méthodes naturelles pour retrouver vitalité et harmonie.</p>
 
         <img src={img1} alt="leaf" className="leaf leaf1" />
         <img src={img2} alt="leaf" className="leaf leaf2" />

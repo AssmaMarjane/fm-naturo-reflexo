@@ -27,26 +27,13 @@
 }
 
 .reflexo-title {
-  color: $nude;
-  font-family: $font-script1;
-  font-weight: normal;
-  font-size: 40px;
-  margin-bottom: 20px;
-  text-align: center;
   border-bottom: 2px solid #c7a17a; /* ligne sous le titre */
-  padding-bottom: 10px;
-  @include lg {
-    font-size: 35px;
-  }
-  @include md {
-    font-size: 30px;
-  }
 }
 
 .reflexo-subtitle {
-  color: $nude;
-  font-family: "Libre Baskerville", serif;
+  font-family: $font-serif;
   font-size: 24px;
+  color: $nude;
   margin-top: 30px;
   margin-bottom: 15px;
   border-left: 4px solid #7a5c3d;
@@ -103,19 +90,17 @@
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
-
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(100, 140, 80, 0.2);
   @include md {
-  font-size: 14px;
+    font-size: 14px;
   }
   @include sm {
-  font-size: 13px;
+    font-size: 13px;
   }
   @include xs {
-  font-size: 12px;
+    font-size: 12px;
   }
-
 }
 
 .cta-reflexo-button:hover {

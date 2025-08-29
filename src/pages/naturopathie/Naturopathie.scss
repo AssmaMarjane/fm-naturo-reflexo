@@ -14,7 +14,14 @@
 .naturo-content {
   width: 70%;
   background-color: $brun; /* papier clair */
-   background: linear-gradient(180deg,  $bleu-turkish 0%, $vert-sombre 20%, $vert-sombre2 50%, $vert-sombre 75%,$bleu-turkish 95% ); /* beige vers vert clair */
+  background: linear-gradient(
+    180deg,
+    $bleu-turkish 0%,
+    $vert-sombre 20%,
+    $vert-sombre2 50%,
+    $vert-sombre 75%,
+    $bleu-turkish 95%
+  ); /* beige vers vert clair */
 
   padding: 40px 50px;
   border: 2px solid $nude-rose; /* brun clair */
@@ -26,26 +33,13 @@
 }
 
 .naturo-title {
-  color: $brun-clair;
-    font-family: $font-script1;
-    font-weight: normal;
-  font-size: 40px;
-  margin-bottom: 20px;
-  text-align: center;
   border-bottom: 2px solid $brun; /* ligne sous le titre */
-  padding-bottom: 10px;
-  @include lg {
-    font-size: 35px;
-  }
-  @include md {
-    font-size: 30px;
-  }
 }
 
 .naturo-subtitle {
-  color: $brun;
-  font-family: "Libre Baskerville", serif;
+  font-family: $font-serif;
   font-size: 24px;
+  color: $brun;
   margin-top: 30px;
   margin-bottom: 15px;
   border-left: 4px solid $brun;
@@ -102,19 +96,17 @@
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
-
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(100, 140, 80, 0.2);
   @include md {
-  font-size: 14px;
+    font-size: 14px;
   }
   @include sm {
-  font-size: 13px;
+    font-size: 13px;
   }
   @include xs {
-  font-size: 12px;
+    font-size: 12px;
   }
-
 }
 
 .cta-naturo-button:hover {

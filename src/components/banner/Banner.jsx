@@ -23,7 +23,7 @@ function Banner() {
           <h2 className="title-banner">
           <span className="fm-banner">F M</span> <br />
           Naturopathe__Réflexologue</h2>
-          <h3 className="subtitle-fm">La santé au coeur du bien-être</h3>
+          <p className="subtitle-fm">La santé au coeur du bien-être</p>
         </div>
       </div>
 

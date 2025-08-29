@@ -59,11 +59,17 @@
   z-index: 2;
   width: 50%;
   color: #f8e6d5;
-  font-size: 27px;
+  font-size: 35px;
   font-family: "Parisienne";
   font-weight: normal;
   text-align: center;
-  @media only screen and (max-width: 1240px) {
+  @include md {
+    font-size: 30px;
+  }
+  @include sm {
+    font-size: 23px;
+  }
+  @include xs {
     font-size: 20px;
   }
 }

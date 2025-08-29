@@ -6,12 +6,12 @@ function Presentation({ data }) {
 
   return (
     <section className={`presentation ${classPrefix}`}>
-      <h1 className="presentation-title">{title}</h1>
+      <h2 className="presentation-title">{title}</h2>
 
       {sections.map((sec, index) => (
         <div key={index} className={`presentation-section ${index % 2 === 0 ? "left" : "right"}`}>
           <div className="text">
-            <h2 className="presentation-subtitle">{sec.subtitle}</h2>
+            <h3 className="presentation-subtitle">{sec.subtitle}</h3>
             <p className="presentation-text">{sec.paragraph}</p>
           </div>
           {sec.image && (

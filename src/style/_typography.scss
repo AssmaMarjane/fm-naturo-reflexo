@@ -12,24 +12,41 @@ body {
   background-color: $blanc;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-family: $font-secondary;
   font-size: $font-xxlarge;
   font-weight: 700;
-  @include lg{ font-size: 2.5rem; }
-  @include md { font-size: 2rem; }
+  @include lg {
+    font-size: 2.5rem;
+  }
+  @include md {
+    font-size: 2rem;
+  }
 }
 
-h2, .h2 {
-  font-family: $font-secondary;
-  font-size: $font-xlarge;
-  font-weight: 600;
-  @include md{ font-size: 1.8rem; }
+h2,
+.h2 {
+  font-size: 40px;
+  font-weight: normal;
+  text-align: center;
+  font-family: $font-script1;
+  color: $nude;
+  margin: 10%;
+  @include md {
+    font-size: 35px;
+  }
+  @include sm {
+    font-size: 30px;
+  }
 }
 
-p, .text {
+p,
+.text {
   font-family: $font-serif;
   font-size: $font-medium;
   margin-bottom: $spacing-sm;
-  @include sm { font-size: 0.95rem; }
+  @include sm {
+    font-size: 0.95rem;
+  }
 }

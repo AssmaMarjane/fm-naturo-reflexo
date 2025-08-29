@@ -16,15 +16,15 @@ function Prestations() {
     <main>
       <div className="presta-container">
         <section className="prestations-section">
-          <h1 className="prestations-title">Mes Prestations</h1>
+          <h2 className="prestations-title">Mes Prestations</h2>
           <div className="prestations-grid">
             {prestations.map((p, i) => (
-              <div key={i} className="prestation-widget" onClick={() => openModal(i)}>
+              <button key={i} type="button" className="prestation-widget" onClick={() => openModal(i)}>
                 <h3 className="widget-title">{p.nom}</h3>
                 <p className="widget-text">
                   {p.duree} | {p.prix}
                 </p>
-              </div>
+              </button>
             ))}
           </div>
 
@@ -39,7 +39,9 @@ function Prestations() {
                   <strong>Prix :</strong> {prestations[selected].prix}
                 </p>
                 <p className="modal-text">{prestations[selected].description}</p>
-                <button onClick={closeModal} className="presta-button">Fermer</button>
+                <button onClick={closeModal} className="presta-button">
+                  Fermer
+                </button>
                 <Link to="/contact" className="presta-button" state={{ prestation: prestations[selected].nom }}>
                   Prendre rendez-vous
                 </Link>

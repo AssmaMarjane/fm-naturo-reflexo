@@ -13,11 +13,9 @@ function FAQSection() {
         <Collapse
           title="Quels sont les bienfats de la naturopathie ?"
           content="La naturopathie aide à mieux gérer son stress, à renforcer ses défenses naturelles, à améliorer son énergie et sa digestion, et encourage de bonnes habitudes de vie grâce à des méthodes naturelles."
+          className="faq"
         />
-        <Collapse
-          title="Quelle est la durée d'une séance de réflexologie ?"
-          content="Une séance dure en moyenne entre 45min à 1h."
-        />
+        <Collapse title="Quelle est la durée d'une séance de réflexologie ?" content="Une séance dure en moyenne entre 45min à 1h." className="faq" />
       </div>
       <Link to="/faq" className="faq-link">
         Voir toutes les questions
