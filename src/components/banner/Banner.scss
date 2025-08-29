@@ -5,11 +5,11 @@
   width: 100%;
   height: 350px;
   overflow: hidden;
-  @media only screen and (max-width: 1240px) {
+  @include lg {
     height: 300px;
   }
-  @media only screen and (max-width: 768px) {
-    height: 220px; /* mobile */
+  @include md {
+    height: 220px;
   }
 }
 
@@ -67,7 +67,7 @@
 }
 
 .title-banner {
-  font-family: $font-script2; 
+  font-family: $font-script2;
   align-self: center;
   font-size: 2rem;
   margin-bottom: 0.5rem;
@@ -84,7 +84,7 @@
 }
 
 .title-banner-second {
-  font-family: $font-serif; 
+  font-family: $font-serif;
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -100,7 +100,7 @@
 }
 
 .subtitle-fm {
-  font-family: $font-serif; // Libre Baskerville
+  font-family: $font-serif; 
 
   font-size: 1.3rem;
   font-weight: 600;
@@ -126,7 +126,7 @@
 }
 
 .banner-link {
-  font-family: $font-serif; // Libre Baskerville
+  font-family: $font-serif; 
   font-weight: normal;
   font-size: 17px;
   text-decoration: none;
