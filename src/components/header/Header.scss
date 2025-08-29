@@ -1,10 +1,7 @@
 @use "../../style/main" as *;
 
 .fm-header {
-  .fm-header {
-    position: relative;
-  }
-
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,7 +41,6 @@
     animation-iteration-count: 1;
     transition-timing-function: ease-out;
   }
-
   @include md {
     width: 80px;
     height: 80px;
@@ -104,7 +100,7 @@
 }
 
 .home-link {
-  font-family: $font-serif; // Libre Baskerville
+  font-family: $font-serif;
   font-weight: normal;
   font-size: 17px;
   text-decoration: none;
@@ -133,7 +129,7 @@
 .mobile-menu {
   display: none; // caché par défaut
   position: absolute;
-  top: 100%; // juste en dessous du header ou du burger
+  top: 100%;
   right: 0;
   background: $nude;
   border: 1px solid $bleu-turkish;
@@ -154,7 +150,7 @@
 @include lg {
   .mobile-menu {
     position: absolute;
-    top: 100px; // juste en dessous du header ou du burger
+    top: 100px;
     right: 0;
     z-index: 1;
     flex-direction: column;
