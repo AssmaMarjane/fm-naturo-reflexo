@@ -3,7 +3,7 @@
 .intro_section {
   display: flex;
   align-items: center;
-  background-color: #104245;
+  background-color: $bleu-turkish;
   width: 100%;
   height: 230px;
 }
@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #104245;
+  background-color: $bleu-turkish;
   overflow: hidden;
   .leaf {
     position: absolute;
@@ -58,9 +58,9 @@
   position: relative;
   z-index: 2;
   width: 50%;
-  color: #f8e6d5;
+  color: $nude;
   font-size: 35px;
-  font-family: "Parisienne";
+  font-family: $font-script2;
   font-weight: normal;
   text-align: center;
   @include md {
