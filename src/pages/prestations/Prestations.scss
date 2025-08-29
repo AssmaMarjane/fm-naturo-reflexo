@@ -48,6 +48,7 @@
   }
 
   .widget-text {
+    font-family: $font-serif;
     font-size: 16px;
     color: $bleu-turkish;
     @include lg {
@@ -65,7 +66,6 @@
   }
 }
 
-/* Modal */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -91,6 +91,8 @@
   .modal-title {
     font-size: 18px;
     color: $bleu-turkish;
+    font-family: $font-serif;
+
     @include lg {
       font-size: 17px;
     }
@@ -106,6 +108,7 @@
   }
 
   .modal-text {
+    font-family: $font-serif;
     font-size: 16px;
     color: $bleu-turkish;
     margin: 0;
@@ -125,11 +128,12 @@
   }
 
   .presta-button {
+    font-family: $font-serif;
     background: linear-gradient(45deg, $vert-plante, $vert-sombre);
     color: $brun;
     border: none;
     border-radius: 10px;
-    padding: 12px 25px;
+    padding: 12px 23px;
     font-size: 13px;
     margin-top: 4%;
     margin-left: 2%;
