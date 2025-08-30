@@ -24,6 +24,7 @@ function Prestations() {
                 <p className="widget-text">
                   {p.duree} | {p.prix}
                 </p>
+                <p className="widget-info"> i </p>
               </button>
             ))}
           </div>

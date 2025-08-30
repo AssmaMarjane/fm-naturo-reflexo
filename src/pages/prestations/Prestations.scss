@@ -17,7 +17,8 @@
 
 .prestation-widget {
   all: unset;
-  width: 180px;
+  width: 230px;
+  height: 200px;
   padding: 1rem;
   border-radius: 8px;
   background-color: $nude;
@@ -28,6 +29,11 @@
   &:hover {
     transform: translateY(-5px);
   }
+  @include md {
+    width: 200px;
+    height: 170px;
+  }
+
   .widget-title {
     font-family: $font-serif;
     font-size: 17px;
@@ -53,6 +59,37 @@
     color: $bleu-turkish;
     @include lg {
       font-size: 15px;
+    }
+    @include md {
+      font-size: 13px;
+    }
+    @include sm {
+      font-size: 12px;
+    }
+    @include xs {
+      font-size: 11px;
+    }
+  }
+
+  .widget-info {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid $bleu-turkish; // ou une de tes couleurs
+    font-size: 14px;
+    font-weight: bold;
+    color: $bleu-turkish;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #104245;
+      color: #fff;
     }
     @include md {
       font-size: 13px;
