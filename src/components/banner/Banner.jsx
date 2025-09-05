@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import "./Banner.scss";
 import { Link } from "react-router-dom";
 
-import img1 from "../../assets/images/banner5.jpg";
-import img2 from "../../assets/images/banner7.webp";
+import img1 from "../../assets/images/fati.jpg";
+import img2 from "../../assets/images/quai1.jpg";
 
 function Banner() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -20,9 +20,10 @@ function Banner() {
       <div className={`slide ${currentImage === 0 ? "active" : ""}`}>
         <img src={img1} alt="Bannière 1" />
         <div className="overlay">
-          <h2 className="title-banner">
-          <span className="fm-banner">F M</span> <br />
-          Naturopathe__Réflexologue</h2>
+          <h2 className="fm-banner">
+          <span >F</span>m
+          </h2>
+          <h3 className="title-banner">Naturopathe & Réflexologue </h3>
           <p className="subtitle-fm">La santé au coeur du bien-être</p>
         </div>
       </div>

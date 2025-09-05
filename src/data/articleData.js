@@ -1,7 +1,7 @@
 import praticienImg from "../assets/images/naturo2.jpg";
-import cabinet1Img from "../assets/images/cabinet.jpg";
+import cabinet1Img from "../assets/images/banner4.jpg";
 import reflexImg from "../assets/images/reflexo.jpg";
-import natImg from "../assets/images/naturo.jpg";
+import natImg from "../assets/images/banner1.jpg";
 
 
 

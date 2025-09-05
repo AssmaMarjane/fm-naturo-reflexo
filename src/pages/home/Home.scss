@@ -5,5 +5,5 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: $bleu-turkish;
+  background: linear-gradient(180deg,$bleu-turkish 23%, $bleu-turkish-md 40%,$vert-sombre 60%, $brun 80%, $bleu-turkish 98%);
 }

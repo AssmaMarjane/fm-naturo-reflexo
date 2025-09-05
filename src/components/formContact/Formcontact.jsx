@@ -1,15 +1,16 @@
 import "../../style/main.scss";
 import "./FormContact.scss";
-import dispoData from "../../data/dispo.json";
-import { useState } from "react";
+//import dispoData from "../../data/dispo.json";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import prestations from "../../data/prestations.json";
-
+import { sendContactForm, getDispo } from "../../api/contactApi.js";
 
 function FormContact() {
   const location = useLocation();
   const preselection = location.state?.prestation || ""; // récupère la prestation si on vient de Prestations
-  const [dispoState, setDispoState] = useState(dispoData);
+
+  const [dispoState, setDispoState] = useState({});
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
@@ -18,7 +19,22 @@ function FormContact() {
     date: "",
     message: "",
   });
-console.log(location.state)
+
+  console.log(location.state);
+
+  // Récupérer les créneaux depuis le backend
+  useEffect(() => {
+    const fetchDispo = async () => {
+      try {
+        const data = await getDispo();
+        setDispoState(data);
+      } catch (err) {
+        console.error("Erreur récupération créneaux :", err);
+      }
+    };
+    fetchDispo();
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -27,29 +43,30 @@ console.log(location.state)
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Données du formulaire :", formData);
 
- if (formData.prestation && formData.date && formData.heure) {
-    // Retirer le créneau réservé
-    setDispoState((prev) => ({
-      ...prev,
-      [formData.date]: prev[formData.date].filter((h) => h !== formData.heure),
-    }));
-  }
+    try {
+      await sendContactForm(formData); // fetch vers backend
+      alert("Réservation envoyée !");
 
-    // Ici tu peux envoyer les données vers ton backend ou API
-    alert("Formulaire envoyé !");
-    setFormData({
-      nom: "",
-      prenom: "",
-      telephone: "",
-      prestation: "",
-      date: "",
-      heure: "",
-      message: "",
-    });
+      // Mettre à jour les créneaux après réservation
+      const newDispo = await getDispo();
+      setDispoState(newDispo);
+
+      setFormData({
+        nom: "",
+        prenom: "",
+        telephone: "",
+        prestation: "",
+        date: "",
+        heure: "",
+        message: "",
+      });
+    } catch (err) {
+      alert("Erreur : " + err.message);
+    }
   };
 
   return (

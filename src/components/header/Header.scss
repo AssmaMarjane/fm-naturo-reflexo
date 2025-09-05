@@ -4,12 +4,15 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
-  height: 130px;
+  height: 140px;
   background-color: $bleu-turkish;
-  @include lg {
-    height: 100px;
+
+  @include md {
+    height: 130px;
+  }
+  @include md {
+    height: 120px;
   }
 }
 
@@ -17,25 +20,14 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  width: 50%;
-  @include lg {
-    width: 70%;
-  }
-  @include md {
-    width: 75%;
-  }
-  @include sm {
-    width: 80%;
-  }
-  @include xs {
-    width: 85%;
-  }
+  justify-content: flex-end;
+  align-self: center;
+  width: 65%;
 }
 .logo-fm {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   color: $nude;
-  margin-left: 5%;
   &:hover {
     transform: scale(1.1);
     animation-iteration-count: 1;
@@ -55,48 +47,77 @@
   }
 }
 
-.title-fm {
+.title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   color: $nude;
-  font-size: 27px;
-  font-family: $font-script2;
+  margin-right: $spacing-sm;
+}
+.title-fm {
+  font-size: 18px;
+  font-family: $font-secondary;
+  margin: 0;
   font-weight: normal;
-  margin-left: $spacing-sm;
+
   @include lg {
-    font-size: 22px;
+    font-size: 16px;
   }
   @include md {
-    font-size: 19px;
+    font-size: 14px;
   }
   @include sm {
-    font-size: 17px;
+    font-size: 12px;
   }
   @include xs {
-    font-size: 15px;
+    font-size: 10px;
   }
 }
 
 .fm {
-  font-weight: bold;
-  font-size: 29px;
-  font-family: $font-script1;
-  @include lg {
-    font-size: 25px;
+  font-size: 48px;
+  font-family: $font-script2;
+  margin: 0;
+  margin-bottom: 0;
+  font-weight: normal;
+    @include lg {
+    font-size: 45px;
   }
   @include md {
-    font-size: 21px;
+    font-size: 42px;
   }
   @include sm {
-    font-size: 19px;
+    font-size: 39px;
   }
   @include xs {
-    font-size: 17px;
+    font-size: 35px;
   }
+
+span{
+  font-size: 56px;
+  font-weight: normal;
+  margin: 0;
+  @include lg {
+    font-size: 53px;
+  }
+  @include md {
+    font-size: 50px;
+  }
+  @include sm {
+    font-size: 47px;
+  }
+  @include xs {
+    font-size: 44px;
+  }
+
+}
 }
 
 .menu_section {
-  width: 60%;
+  width: 30%;
   display: flex;
-  align-items: center;
+  align-self: center;
+  justify-content: flex-end;
 }
 
 .home-link {
@@ -112,7 +133,10 @@
 }
 
 .burger {
-  display: none;
+  //display: none;
+  display: block;
+
+  align-self: center;
   font-size: 2rem;
   background: none;
   border: none;
@@ -124,6 +148,10 @@
     animation-iteration-count: 1;
     transition-timing-function: ease-out;
   }
+    @include md {
+  margin-right: $spacing-xs;
+  }
+
 }
 
 .mobile-menu {
@@ -147,65 +175,54 @@
 }
 
 /* --- Responsive --- */
-@include lg {
-  .mobile-menu {
-    position: absolute;
-    top: 100px;
-    right: 0;
-    z-index: 1;
-    flex-direction: column;
-    align-items: flex-start;
-    background: $bleu-turkish;
-    border-radius: $radius-md 0 0 $radius-md;
-    padding: $spacing-sm $spacing-md;
-    width: 110px;
-    /* caché par défaut */
-    transform: translateX(110%);
-    transition: transform 0.3s ease-in-out;
-    @include lg {
-      width: 100px;
-    }
-    @include md {
-      width: 95px;
-    }
-    @include sm {
-      width: 90px;
-    }
-    @include xs {
-      width: 70px;
-    }
-
-    .home-link {
-      display: block;
-      color: $nude;
-      font-size: 1rem;
-      margin: 12px 0;
-      @include lg {
-        font-size: 18px;
-      }
-      @include md {
-        font-size: 16px;
-      }
-      @include sm {
-        font-size: 14px;
-      }
-      @include xs {
-        font-size: 12px;
-      }
-    }
-    /* affichage quand le burger est ouvert */
-    &.open {
-      transform: translateX(0);
-      display: block;
-    }
+.mobile-menu {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  z-index: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  background: $bleu-turkish;
+  border-radius: $radius-md 0 0 $radius-md;
+  padding: $spacing-sm $spacing-md;
+  width: 110px;
+  /* caché par défaut */
+  transform: translateX(110%);
+  transition: transform 0.3s ease-in-out;
+  @include lg {
+    width: 100px;
+  }
+  @include md {
+    width: 95px;
+  }
+  @include sm {
+    width: 90px;
+  }
+  @include xs {
+    width: 70px;
   }
 
-  .desktop-menu {
-    display: none;
-  }
-  .burger {
+  .home-link {
     display: block;
     color: $nude;
-    background: none;
+    font-size: 1rem;
+    margin: 12px 0;
+    @include lg {
+      font-size: 18px;
+    }
+    @include md {
+      font-size: 16px;
+    }
+    @include sm {
+      font-size: 14px;
+    }
+    @include xs {
+      font-size: 12px;
+    }
+  }
+  /* affichage quand le burger est ouvert */
+  &.open {
+    transform: translateX(0);
+    display: block;
   }
 }
