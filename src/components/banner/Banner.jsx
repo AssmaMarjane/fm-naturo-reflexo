@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./Banner.scss";
 import { Link } from "react-router-dom";
 
-import img1 from "../../assets/images/fati.jpg";
+import img1 from "../../assets/images/banner4.jpg";
 import img2 from "../../assets/images/quai1.jpg";
 
 function Banner() {
