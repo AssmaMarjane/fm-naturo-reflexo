@@ -56,8 +56,7 @@ export const articles = {
         subtitle: "La réflexologie : le bien-être par les pieds et les mains",
         paragraph: `La réflexologie est une pratique douce qui stimule des points précis sur les pieds (ou les mains) pour rééquilibrer le corps et favoriser
             l'auto-guérison. Elle repose sur le principe que chaque zone réflexe correspond à un organe ou une fonction du corps, et que leur
-            stimulation peut soulager le stress, améliorer la circulation et soutenir le bien-être général.{" "}
-`,
+            stimulation peut soulager le stress, améliorer la circulation et soutenir le bien-être général.`,
       },
       {
         subtitle: " D'où ça vient ?",

@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import "./Banner.scss";
 import { Link } from "react-router-dom";
 
-import img1 from "../../assets/images/banner4.jpg";
-import img2 from "../../assets/images/quai1.jpg";
+import img1 from "../../assets/images/banner3.jpg";
+import img2 from "../../assets/images/cabinet3.png";
 
 function Banner() {
   const [currentImage, setCurrentImage] = useState(0);

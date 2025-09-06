@@ -4,8 +4,13 @@
   display: flex;
   align-items: center;
   background-color: none;
-  width: 100%;
+  width: 75%;
   height: 230px;
+ align-self: center;
+  @include sm {
+    width: 100%;
+  }
+
 }
 
 .decor-section {

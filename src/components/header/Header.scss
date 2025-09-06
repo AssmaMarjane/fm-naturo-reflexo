@@ -80,7 +80,7 @@
   margin: 0;
   margin-bottom: 0;
   font-weight: normal;
-    @include lg {
+  @include lg {
     font-size: 45px;
   }
   @include md {
@@ -93,24 +93,24 @@
     font-size: 35px;
   }
 
-span{
-  font-size: 56px;
-  font-weight: normal;
-  margin: 0;
-  @include lg {
-    font-size: 53px;
+  span {
+    font-family: $font-script4;
+    font-size: 56px;
+    font-weight: normal;
+    margin: 0;
+    @include lg {
+      font-size: 53px;
+    }
+    @include md {
+      font-size: 50px;
+    }
+    @include sm {
+      font-size: 47px;
+    }
+    @include xs {
+      font-size: 44px;
+    }
   }
-  @include md {
-    font-size: 50px;
-  }
-  @include sm {
-    font-size: 47px;
-  }
-  @include xs {
-    font-size: 44px;
-  }
-
-}
 }
 
 .menu_section {
@@ -148,10 +148,9 @@ span{
     animation-iteration-count: 1;
     transition-timing-function: ease-out;
   }
-    @include md {
-  margin-right: $spacing-xs;
+  @include md {
+    margin-right: $spacing-xs;
   }
-
 }
 
 .mobile-menu {
