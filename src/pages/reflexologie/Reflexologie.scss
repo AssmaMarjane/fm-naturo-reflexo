@@ -1,7 +1,7 @@
 @use "../../style/main" as *;
 
 .reflexo-container {
-  background: linear-gradient(180deg, $bleu-turkish 0%, $nude-clair 25%, $brun-lgt 70%, $bleu-turkish 95%); 
+  background: linear-gradient(180deg, $bleu-turkish 0%, $nude-clair 25%, $brun-lgt 70%, $bleu-turkish 100%); 
   display: flex;
   justify-content: center;
   padding: 50px 20px;
@@ -13,7 +13,7 @@
 .reflexo-content {
   width: 70%;
   background-color: $nude; 
-  background: linear-gradient(180deg, $bleu-turkish 0%, $brun 20%, $brun-lgt 50%, $brun 75%, $bleu-turkish 95%);
+  background: linear-gradient(180deg, $bleu-turkish 0%, $brun 20%, $brun-lgt 40%, $brun 60%, $bleu-turkish 100%);
   padding: 40px 50px;
   border: 2px solid $brun-lgt; 
   border-radius: 15px;
@@ -74,7 +74,7 @@
   display: flex;
   gap: 20px;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 10%;
   flex-wrap: wrap;
 }
 

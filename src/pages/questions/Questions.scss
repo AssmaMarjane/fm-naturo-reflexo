@@ -5,7 +5,7 @@
   flex-direction: column;
   font-family: $font-serif;
   width: 90%;
-  background: linear-gradient(180deg, $bleu-turkish 0%, $brun 35%, $brun-md 54%, $brun-lgt 60%, $brun-md 66%, $brun 78%, $bleu-turkish 90%);
+  background: linear-gradient(180deg,$bleu-turkish 0%, $bleu-turkish-md 25%,$vert-sombre 50%, $brun 75%, $bleu-turkish 100%);
 }
 
 .questions-collapses {
@@ -13,10 +13,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 90%;
+  width: 80%;
   .fm-collapse.questions {
     border-radius: 10px;
-    background-color: $brun-clair;
+    background-color: $nude;
     margin-bottom: 5%;
     border: none;
     opacity: 0.8;

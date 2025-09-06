@@ -9,6 +9,7 @@
   width: 100%;
   padding-top: 3%;
   background-color: $bleu-turkish;
+  height: 180px;
 }
 
 .copyright {
@@ -24,7 +25,7 @@
     font-size: 15px;
   }
   @include sm {
-    font-size: 13px;
+    font-size: 12px;
   }
   @include xs {
     font-size: 10px;

@@ -18,7 +18,7 @@
       flex-direction: row-reverse;
     }
     .presentation-subtitle {
-      font-family: $font-script2;
+      font-family: $font-script3;
       font-size: 35px;
       font-weight: normal;
       margin-left: $spacing-sm;
@@ -105,7 +105,7 @@
     display: flex;
     gap: 40px;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 10%;
     flex-wrap: wrap;
   }
   .cta-about-button {
