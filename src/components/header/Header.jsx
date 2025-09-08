@@ -1,5 +1,5 @@
 import "./Header.scss";
-import fmLogo from "../../assets/logos/logofm_2px.png";
+import fmLogo from "../../assets/logos/logofm.png";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
