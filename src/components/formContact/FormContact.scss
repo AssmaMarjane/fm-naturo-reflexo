@@ -133,6 +133,21 @@
   }
 }
 
+.presta-option{
+    font-size: 0.9rem;
+
+    @include md {
+    font-size: 0.7rem;
+  }
+  @include sm {
+    font-size: 0.6rem;
+  }
+  @include xs {
+    font-size: 0.55rem;
+  }
+
+}
+
 .calendar-toggle {
   background: #f2f2f2;
   border: 1px solid #ccc;

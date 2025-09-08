@@ -109,10 +109,10 @@ function FormContact() {
         {/* Nouveau select pour les prestations */}
         <div className="input-wrapper">
           <label htmlFor="prestation">Sélectionnez une prestation</label>
-          <select id="prestation" name="prestation" value={formData.prestation} onChange={handleChange}>
-            <option value="">Choisir une prestation </option>
+          <select className="presta-select" id="prestation" name="prestation" value={formData.prestation} onChange={handleChange}>
+            <option className="presta-option" value="">Choisir une prestation </option>
             {prestations.map((p, index) => (
-              <option key={index} value={p.nom}>
+              <option className="presta-option" key={index} value={p.nom}>
                 {p.nom} ({p.duree} | {p.prix})
               </option>
             ))}
