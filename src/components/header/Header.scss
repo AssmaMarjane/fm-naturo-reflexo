@@ -71,6 +71,15 @@
   }
 }
 
+.fm-logo-link {
+  text-decoration: none;
+  color: $nude;
+    &:hover {
+    transform: scale(1.1);
+    animation-iteration-count: 1;
+    transition-timing-function: ease-out;
+  }
+}
 .fm {
   font-size: 48px;
   font-family: $font-script2;

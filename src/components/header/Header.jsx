@@ -30,8 +30,12 @@ function Header() {
           <img src={fmLogo} className="logo-fm" alt="FM logo" />
         </Link>
         <div className="title-section">
-          <h1 className="fm">
-            <span>F</span>m</h1>
+          <Link to="/" className="fm-logo-link">
+            <h1 className="fm">
+              <span>F</span>m
+            </h1>
+          </Link>
+
           <h2 className="title-fm">Naturopathe & Réflexologue</h2>
         </div>
       </div>

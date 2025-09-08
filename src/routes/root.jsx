@@ -81,3 +81,9 @@ dans element :
     redux persist
 
 */
+
+/**
+ * npm start
+ * npm run dev
+ * npm run deploy
+ */
