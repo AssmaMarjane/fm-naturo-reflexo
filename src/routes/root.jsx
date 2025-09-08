@@ -8,6 +8,7 @@ import Prestations from "../pages/prestations/Prestations.jsx";
 import Reflexologie from "../pages/reflexologie/Reflexologie.jsx";
 import Contact from "../pages/contact/Contact.jsx";
 import Questions from "../pages/questions/Questions.jsx";
+import AdminPage from "../pages/adminPage/AdminPage.jsx";
 /**
  * Configuration of the router for the application.
  *
@@ -59,6 +60,11 @@ const router = createBrowserRouter(
           path: "/contact",
           element: <Contact />,
         },
+                {
+          path: "/gestion",
+          element: <AdminPage/>,
+        },
+
       ],
     },
   ],
