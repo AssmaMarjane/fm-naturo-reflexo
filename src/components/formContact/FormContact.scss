@@ -132,3 +132,21 @@
     font-size: 0.7rem;
   }
 }
+
+.calendar-toggle {
+  background: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dispo-day {
+  background: $vert-sombre !important;
+  border-radius: 50% !important;
+  color: black !important;
+}
+
+.not-dispo-day {
+  color: #ccc !important; /* dates sans créneau en gris */
+}

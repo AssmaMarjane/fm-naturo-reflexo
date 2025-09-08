@@ -6,21 +6,28 @@ import { useLocation } from "react-router-dom";
 import prestations from "../../data/prestations.json";
 import { sendContactForm, getDispo } from "../../api/contactApi.js";
 
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+
 function FormContact() {
   const location = useLocation();
   const preselection = location.state?.prestation || ""; // récupère la prestation si on vient de Prestations
 
   const [dispoState, setDispoState] = useState({});
+  const [showCalendar, setShowCalendar] = useState(false);
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
     telephone: "",
     prestation: preselection,
     date: "",
+    heure: "",
     message: "",
   });
 
   console.log(location.state);
+
+  const formatDate = (date) => date.toLocaleDateString("fr-CA");
 
   // Récupérer les créneaux depuis le backend
   useEffect(() => {
@@ -69,6 +76,12 @@ function FormContact() {
     }
   };
 
+  // Vérifie si une date a des créneaux dispos
+  const hasDispo = (date) => {
+    const localDate = formatDate(date); // ✅ en local, pas UTC
+    return dispoState[localDate] && dispoState[localDate].length > 0;
+  };
+
   return (
     <section className="contact-form-section">
       <h2 className="form-title">Contact / Réservation</h2>
@@ -88,6 +101,11 @@ function FormContact() {
           <input type="tel" id="telephone" name="telephone" value={formData.telephone} onChange={handleChange} required />
         </div>
 
+        <div className="input-wrapper">
+          <label htmlFor="message">Message</label>
+          <textarea id="message" name="message" value={formData.message} onChange={handleChange} required />
+        </div>
+
         {/* Nouveau select pour les prestations */}
         <div className="input-wrapper">
           <label htmlFor="prestation">Sélectionnez une prestation</label>
@@ -101,19 +119,41 @@ function FormContact() {
           </select>
         </div>
 
+        {/* Disponibilité avec toggle calendrier */}
         <div className="input-wrapper">
-          <label htmlFor="disponibilite">Disponibilité</label>
-          {/* Sélection date et heure */}
-          <select name="date" value={formData.date} onChange={handleChange} required={!!formData.prestation}>
-            <option value="">Choisir une date</option>
-            {Object.keys(dispoState).map((d) => (
-              <option key={d} value={d}>
-                {d}
-              </option>
-            ))}
-          </select>
-          {formData.date && (
-            <select name="heure" value={formData.heure} onChange={handleChange} required={!!formData.prestation}>
+          <label>Disponibilité</label>
+          <button type="button" className="calendar-toggle" onClick={() => setShowCalendar((prev) => !prev)}>
+            {formData.date
+              ? `📅 ${new Date(formData.date).toLocaleDateString("fr-FR", {
+                  weekday: "long",
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}`
+              : "Choisir une date"}
+          </button>
+
+          {showCalendar && (
+            <Calendar
+              onClickDay={(date) => {
+                setFormData((prev) => ({
+                  ...prev,
+                  date: formatDate(date),
+                  heure: "",
+                }));
+                setShowCalendar(false); // referme le calendrier après choix
+              }}
+              tileClassName={({ date }) => (hasDispo(date) ? "dispo-day" : "not-dispo-day")}
+              tileDisabled={({ date }) => !hasDispo(date)}
+            />
+          )}
+        </div>
+
+        {/* Créneaux horaires */}
+        {formData.date && (
+          <div className="input-wrapper">
+            <label htmlFor="heure">Créneau horaire</label>
+            <select name="heure" value={formData.heure} onChange={handleChange} required>
               <option value="">-- Choisir un créneau --</option>
               {dispoState[formData.date]?.map((h) => (
                 <option key={h} value={h}>
@@ -121,13 +161,8 @@ function FormContact() {
                 </option>
               ))}
             </select>
-          )}{" "}
-        </div>
-
-        <div className="input-wrapper">
-          <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" value={formData.message} onChange={handleChange} required />
-        </div>
+          </div>
+        )}
 
         <button type="submit" className="submit-button">
           Envoyer
