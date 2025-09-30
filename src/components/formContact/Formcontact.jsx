@@ -1,13 +1,14 @@
 import "../../style/main.scss";
 import "./FormContact.scss";
-//import dispoData from "../../data/dispo.json";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import prestations from "../../data/prestations.json";
-import { sendContactForm, getDispo } from "../../api/contactApi.js";
+import { sendContactForm, sendRdvForm, getDispo } from "../../api/contactApi.js";
 
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+
+import { validateName, validatePrenom, validateTelephone, formatName } from "../../utils/models/formRules.js";
 
 function FormContact() {
   const location = useLocation();
@@ -15,6 +16,8 @@ function FormContact() {
 
   const [dispoState, setDispoState] = useState({});
   const [showCalendar, setShowCalendar] = useState(false);
+  const [isBooking, setIsBooking] = useState(false);
+
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
@@ -26,8 +29,10 @@ function FormContact() {
   });
 
   console.log(location.state);
-
-  const formatDate = (date) => date.toLocaleDateString("fr-CA");
+  const toLocalIso = (date) => {
+    if (!(date instanceof Date)) return null; // sécurité
+    return date.toLocaleDateString("en-CA"); // YYYY-MM-DD
+  };
 
   // Récupérer les créneaux depuis le backend
   useEffect(() => {
@@ -52,25 +57,84 @@ function FormContact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Données du formulaire :", formData);
+    // Validation
+    if (!validateName(formData.nom)) {
+      alert("Nom invalide (doit commencer par une majuscule et contenir seulement lettres et tirets).");
+      return;
+    }
+    if (!validatePrenom(formData.prenom)) {
+      alert("Prénom invalide (doit commencer par une majuscule et contenir seulement lettres et tirets).");
+      return;
+    }
+    if (!validateTelephone(formData.telephone)) {
+      alert("Téléphone invalide (doit contenir 10 chiffres).");
+      return;
+    }
 
+      // Si case cochée → il faut aussi valider la réservation
+  if (isBooking) {
+    if (!formData.prestation) {
+      alert("Veuillez choisir une prestation.");
+      return;
+    }
+    if (!formData.date) {
+      alert("Veuillez choisir une date.");
+      return;
+    }
+    if (!formData.heure) {
+      alert("Veuillez choisir un créneau horaire.");
+      return;
+    }
+  }
+
+
+    // Formater nom et prénom
+    let formattedData = {
+      ...formData,
+      nom: formatName(formData.nom),
+      prenom: formatName(formData.prenom),
+    };
+
+  // 🔹 Si ce n’est pas une réservation → on ajoute date/heure actuelles
+  if (!isBooking) {
+    const now = new Date();
+    formattedData = {
+      ...formattedData,
+      date: now.toLocaleDateString("fr-FR"), // format "29/09/2025"
+      heure: now.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }), // format "14:32"
+    };
+  }
+
+    console.log("Données du formulaire :", formattedData);
+   
+   
     try {
-      await sendContactForm(formData); // fetch vers backend
-      alert("Réservation envoyée !");
+    if (isBooking) {
+      // → RDV
+      await sendRdvForm(formattedData);
+      alert("Votre rendez-vous a été réservé !");
+    } else {
+      // → Contact simple
+      await sendContactForm(formattedData);
+      alert("Votre message a été envoyé !");
+    }
 
-      // Mettre à jour les créneaux après réservation
+    // Mise à jour des dispos si RDV
+    if (isBooking) {
       const newDispo = await getDispo();
       setDispoState(newDispo);
+    }
 
       setFormData({
         nom: "",
         prenom: "",
         telephone: "",
-        prestation: "",
+        prestation: preselection || "",
         date: "",
         heure: "",
         message: "",
       });
+      setIsBooking(false);
     } catch (err) {
       alert("Erreur : " + err.message);
     }
@@ -78,8 +142,7 @@ function FormContact() {
 
   // Vérifie si une date a des créneaux dispos
   const hasDispo = (date) => {
-    const localDate = formatDate(date); // ✅ en local, pas UTC
-    return dispoState[localDate] && dispoState[localDate].length > 0;
+    return dispoState[toLocalIso(date)]?.length > 0;
   };
 
   return (
@@ -106,64 +169,76 @@ function FormContact() {
           <textarea id="message" name="message" value={formData.message} onChange={handleChange} required />
         </div>
 
-        {/* Nouveau select pour les prestations */}
         <div className="input-wrapper">
-          <label htmlFor="prestation">Sélectionnez une prestation</label>
-          <select className="presta-select" id="prestation" name="prestation" value={formData.prestation} onChange={handleChange}>
-            <option className="presta-option" value="">Choisir une prestation </option>
-            {prestations.map((p, index) => (
-              <option className="presta-option" key={index} value={p.nom}>
-                {p.nom} ({p.duree} | {p.prix})
-              </option>
-            ))}
-          </select>
+          <label>
+            <input type="checkbox" checked={isBooking} onChange={(e) => setIsBooking(e.target.checked)} />
+            Réserver un RDV
+          </label>
         </div>
 
-        {/* Disponibilité avec toggle calendrier */}
-        <div className="input-wrapper">
-          <label>Disponibilité</label>
-          <button type="button" className="calendar-toggle" onClick={() => setShowCalendar((prev) => !prev)}>
-            {formData.date
-              ? `📅 ${new Date(formData.date).toLocaleDateString("fr-FR", {
-                  weekday: "long",
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}`
-              : "Choisir une date"}
-          </button>
-
-          {showCalendar && (
-            <Calendar
-              onClickDay={(date) => {
-                setFormData((prev) => ({
-                  ...prev,
-                  date: formatDate(date),
-                  heure: "",
-                }));
-                setShowCalendar(false); // referme le calendrier après choix
-              }}
-              tileClassName={({ date }) => (hasDispo(date) ? "dispo-day" : "not-dispo-day")}
-              tileDisabled={({ date }) => !hasDispo(date)}
-            />
-          )}
-        </div>
-
-        {/* Créneaux horaires */}
-        {formData.date && (
-          <div className="input-wrapper">
-            <label htmlFor="heure">Créneau horaire</label>
-            <select name="heure" value={formData.heure} onChange={handleChange} required>
-              <option value="">-- Choisir un créneau --</option>
-              {dispoState[formData.date]?.map((h) => (
-                <option key={h} value={h}>
-                  {h}
+        {isBooking && (
+          <>
+            {/*  select pour les prestations */}
+            <div className="input-wrapper">
+              <label htmlFor="prestation">Sélectionnez une prestation</label>
+              <select className="presta-select" id="prestation" name="prestation" value={formData.prestation} onChange={handleChange} required={isBooking}>
+                <option className="presta-option" value="">
+                  Choisir une prestation{" "}
                 </option>
-              ))}
-            </select>
-          </div>
-        )}
+                {prestations.map((p, index) => (
+                  <option className="presta-option" key={index} value={p.nom}>
+                    {p.nom} ({p.duree} | {p.prix})
+                  </option>
+                ))}
+              </select>
+            </div>
 
+            {/* Disponibilité avec toggle calendrier */}
+            <div className="input-wrapper">
+              <label>Disponibilité</label>
+              <button type="button" className="calendar-toggle" onClick={() => setShowCalendar((prev) => !prev)}>
+                {formData.date
+                  ? `📅 ${new Date(formData.date + "T00:00:00").toLocaleDateString("fr-FR", {
+                      weekday: "long",
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}`
+                  : "Choisir une date"}
+              </button>
+
+              {showCalendar && (
+                <Calendar
+                  onClickDay={(date) => {
+                    setFormData((prev) => ({
+                      ...prev,
+                      date: toLocalIso(date),
+                      heure: "",
+                    }));
+                    setShowCalendar(false); // referme le calendrier après choix
+                  }}
+                  tileClassName={({ date }) => (hasDispo(date) ? "dispo-day" : "not-dispo-day")}
+                  tileDisabled={({ date }) => !hasDispo(date)}
+                />
+              )}
+            </div>
+
+            {/* Créneaux horaires */}
+            {formData.date && (
+              <div className="input-wrapper">
+                <label htmlFor="heure">Créneau horaire</label>
+                <select name="heure" value={formData.heure} onChange={handleChange} required>
+                  <option value="">-- Choisir un créneau --</option>
+                  {dispoState[formData.date]?.map((h) => (
+                    <option key={h} value={h}>
+                      {h}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+          </>
+        )}
         <button type="submit" className="submit-button">
           Envoyer
         </button>

@@ -13,7 +13,7 @@ function Footer() {
     {
       name: "WhatsApp",
       icon: whatsappIcon,
-      //url: "https://wa.me/33", // format: 33612345678 (sans + et espaces)
+      //url: "https://wa.me/33", // cmt enreigtrer unum: 33612345678 (sans + et espaces)
     },
   ];
 

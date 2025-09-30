@@ -1,11 +1,363 @@
 @use "../../style/main" as *;
 
-.about-container {
-  background: linear-gradient(180deg, $bleu-turkish 0%, $vert-sombre 25%, $vert-plante 70%, $bleu-turkish 95%); 
+.admin-container {
+  background: linear-gradient(180deg, $bleu-turkish 0%, #3e1f53 20%, $vert-sombre 40%, $bleu-turkish 97%);
   display: flex;
-  justify-content: center;
-  padding: 50px 20px;
+  flex-direction: row; // ✅ On met nav + contenu côte à côte
+  justify-content: space-between;
+  padding: 20px;
   min-height: 100vh;
   font-family: $font-serif;
   position: relative;
+  @include md {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  min-width: 200px;
+
+  button {
+    border-radius: 12px 0 0 12px;
+    border: none;
+    padding: 10px 14px;
+    color: #333;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+      background: $bleu-turkish;
+      color: white;
+    }
+
+    &.active {
+      background: $bleu-turkish;
+      color: white;
+      font-weight: bold;
+      box-shadow: -3px 0 6px rgba(0, 0, 0, 0.2) inset;
+    }
+    @include md {
+      padding: 8px 14px;
+      border-radius: 12px;
+    }
+  }
+}
+
+.dual-calendar {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  @include md {
+    flex-direction: column;
+  }
+  > div {
+    flex: 1;
+  }
+}
+
+.dashbd-title {
+  margin: 7%;
+}
+.update-section {
+  display: flex;
+  flex-direction: column;
+}
+.update-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+/* ===================== */
+/* Modal styles de base  */
+/* ===================== */
+
+.modal-overlay {
+  position: fixed; // 🔹 fixe sur toute la page
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; // 🔹 pour couvrir toute la hauteur
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center; // 🔹 centrer horizontalement
+  z-index: 9999; // 🔹 au-dessus de tout
+  overflow-y: auto; // 🔹 scroll si contenu trop grand
+  padding: 20px; // 🔹 espace autour pour petits écrans
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 500px;
+  width: 100%; // 🔹 prend tout l’espace disponible jusqu’à max-width
+  max-height: 90vh; // 🔹 hauteur max 90% de l’écran
+  overflow-y: auto; // 🔹 scroll à l’intérieur si contenu trop grand
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeInScale 0.3s ease-out;
+  position: relative;
+}
+
+/* Animation apparition */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Boutons à l’intérieur */
+.modal-content button {
+  margin: 5px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.modal-content button:hover {
+  background: #f0f0f0;
+}
+
+/* Pour la liste des heures */
+.date-section-edit,
+.rdv-section-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  button {
+    font-size: 0.9rem;
+  }
+}
+
+.date-list,
+.rdv-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  align-items: center;
+  gap: 20px;
+  justify-items: center;
+  justify-content: space-around;
+  background-color: none;
+  @include md {
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-around;
+    align-content: space-between;
+  }
+}
+
+.rdv-list {
+  grid-template-columns: repeat(3, auto);
+  gap: 25px;
+  @include lg {
+    grid-template-columns: repeat(2, auto);
+  }
+  @include sm {
+    grid-template-columns: repeat(1, auto);
+    justify-content: center;
+    align-content: space-between;
+  }
+}
+.date-item,
+.rdv-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $nude;
+  width: 155px;
+  height: 130px;
+
+  border-radius: 25%;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    animation-iteration-count: 1;
+    transition-timing-function: ease-out;
+  }
+  @include sm {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.rdv-item {
+  width: 290px;
+  height: 230px;
+  p {
+    margin: 2%;
+    @include sm {
+      font-size: 10;
+    }
+  }
+  @include sm {
+    width: 220px;
+    height: 180px;
+  }
+}
+.date-item-title {
+  font-family: $font-serif;
+  font-size: 18px;
+  color: $bleu-turkish;
+  font-weight: normal;
+  margin: 0;
+  align-self: center;
+  @include sm {
+    font-size: 14px;
+  }
+}
+
+/* ===================== */
+/* Pagination Controls   */
+/* ===================== */
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+
+  button {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background: #3e1f53;
+      color: white;
+      border-color: #471c42;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    font-weight: 600;
+    color: #333;
+    min-width: 80px;
+    text-align: center;
+  }
+}
+
+.edit-rdv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  label {
+    font-weight: 500;
+  }
+
+  .input-rdv {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+}
+
+.update-section-title{
+  color: $nude;
+  font-family: $font-secondary;
+}
+
+.admin-rdv-list{
+  width: 80%;
+
+}
+.rdv-table{
+  background-color: $nude;
+  padding: 3%;
+}
+.admin-rdv-list {
+  width: 100%;
+  overflow-x: auto; // permet le scroll horizontal sur mobile
+
+  .rdv-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: #f2f2f2;
+    }
+
+    // Breakpoints
+    @include sm {
+      th, td {
+        padding: 6px;
+        font-size: 0.8rem;
+      }
+    }
+
+    @include xs {
+      th, td {
+        padding: 5px;
+        font-size: 0.75rem;
+      }
+
+      // Exemple : cacher certaines colonnes sur très petit écran
+      th:nth-child(2), td:nth-child(2), // heure
+      th:nth-child(5), td:nth-child(5), // prenom
+      th:nth-child(6), td:nth-child(6)  // tel
+      {
+        display: none;
+      }
+    }
+  }
+
+  .pagination-controls {
+    margin-top: 10px;
+    text-align: center;
+
+    button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      font-size: 0.9rem;
+    }
+  }
 }

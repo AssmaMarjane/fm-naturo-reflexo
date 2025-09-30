@@ -9,6 +9,8 @@ import Reflexologie from "../pages/reflexologie/Reflexologie.jsx";
 import Contact from "../pages/contact/Contact.jsx";
 import Questions from "../pages/questions/Questions.jsx";
 import AdminPage from "../pages/adminPage/AdminPage.jsx";
+import LoginPage from "../pages/loginPage/LoginPage.jsx";
+import ProtectedRoute from "../store/ProtectedRoute.jsx";
 /**
  * Configuration of the router for the application.
  *
@@ -60,11 +62,18 @@ const router = createBrowserRouter(
           path: "/contact",
           element: <Contact />,
         },
-                {
+        {
           path: "/gestion",
-          element: <AdminPage/>,
+          element: (
+            <ProtectedRoute>
+              <AdminPage />
+            </ProtectedRoute>
+          ),
         },
-
+        {
+          path: "/admin",
+          element: <LoginPage />,
+        },
       ],
     },
   ],
