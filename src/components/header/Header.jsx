@@ -1,5 +1,5 @@
 import "./Header.scss";
-import fmLogo from "../../assets/logos/logofm.png";
+import fmLogo from "../../assets/logos/logofm_2p.png";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -26,16 +26,13 @@ function Header() {
     <header className="fm-header">
       {/* logo et titre ici */}
       <div className="logo_section">
-        <Link to="/" className="logo-link">
+        <Link to="/" className="fm-logo-link">
           <img src={fmLogo} className="logo-fm" alt="FM logo" />
         </Link>
         <div className="title-section">
-          <Link to="/" className="fm-logo-link">
             <h1 className="fm">
-              <span>F</span>m
+              Fm
             </h1>
-          </Link>
-
           <h2 className="title-fm">Naturopathe & Réflexologue</h2>
         </div>
       </div>
