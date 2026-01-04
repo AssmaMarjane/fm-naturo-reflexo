@@ -24,24 +24,20 @@ function Header() {
 
   return (
     <header className="fm-header">
+
+
       {/* logo et titre ici */}
-      <div className="logo_section">
-        <Link to="/" className="fm-logo-link">
           <img src={fmLogo} className="logo-fm" alt="FM logo" />
-        </Link>
-        <div className="title-section">
             <h1 className="fm">
               Fm
             </h1>
           <h2 className="title-fm">Naturopathe & Réflexologue</h2>
-        </div>
-      </div>
-      <div className="menu_section">
-        {/* Burger pour mobile */}
+          <Link to="/" className="fm-logo-link"/>
+        <Link to="/" className="logo-overlay" />
+       
         <button className="burger" onClick={() => setIsOpen((prev) => !prev)}>
           ☰
         </button>
-        {/* Menu mobile */}
         <nav className={`mobile-menu ${isOpen ? "open" : ""}`}>
           {links.map((link) => (
             <Link key={link.path} to={link.path} className="home-link" onClick={() => setIsOpen(false)}>
@@ -49,7 +45,6 @@ function Header() {
             </Link>
           ))}
         </nav>
-      </div>
     </header>
   );
 }
