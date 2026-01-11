@@ -31,7 +31,7 @@ function Header() {
             <h1 className="fm">
               Fm
             </h1>
-          <h2 className="title-fm">Naturopathe & Réflexologue</h2>
+          <h2 className="title-fm">Naturopathe x Réflexologue</h2>
           <Link to="/" className="fm-logo-link"/>
         <Link to="/" className="logo-overlay" />
        

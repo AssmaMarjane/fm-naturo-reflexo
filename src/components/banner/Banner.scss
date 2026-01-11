@@ -2,12 +2,12 @@
 
 .banner {
   position: relative;
-  width: 75%;
-  height: 350px;
+  width: 85%;
+  height: 300px;
   overflow: hidden;
   align-self: center;
   @include sm {
-    height: 260px;
+    height: 170px;
     width: 100%;
   }
   // Dégradé qui fond l’image avec le background du parent
@@ -52,28 +52,37 @@
   }
 }
 
+.slide-first {
+  background: url("../../assets/images/banner-vert-nude.svg") center / 100% 100%;
+}
+
+.slide-second {
+  background: url("../../assets/images/banner-lolypop.svg") center / 100% 100%;
+}
+
 .slide.active {
   opacity: 1;
   pointer-events: auto;
 }
 
 .fm-banner {
-  font-size: 48px;
+  font-size: 42px;
   font-family: $font-script2;
   margin: 0;
   margin-bottom: 0;
   font-weight: normal;
+  margin-top: 4%;
   @include lg {
-    font-size: 45px;
+    font-size: 37px;
   }
   @include md {
-    font-size: 42px;
+    font-size: 33px;
   }
   @include sm {
-    font-size: 39px;
+    font-size: 30px;
   }
   @include xs {
-    font-size: 35px;
+    font-size: 27px;
   }
 
   span {
@@ -97,78 +106,101 @@
 }
 
 .title-banner {
-  font-size: 25px;
+  font-size: 22px;
   font-family: $font-secondary;
   margin: 0;
+  position: absolute;
+  top: 75%;
+
   @include lg {
-    font-size: 20px;
-  }
-  @include md {
     font-size: 18px;
   }
-  @include sm {
+  @include md {
     font-size: 16px;
   }
-  @include xs {
+  @include sm {
     font-size: 14px;
+  }
+  @include xs {
+    font-size: 11px;
   }
 }
 .subtitle-fm {
   font-family: $font-serif;
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 15px;
+  position: absolute;
+  top: 90%;
+
   @include md {
-    font-size: 1.1rem;
+    font-size: 12px;
   }
   @include sm {
-    font-size: 1rem;
+    font-size: 11px;
   }
   @include xs {
-    font-size: 0.9rem;
+    font-size: 9px;
   }
 }
 
 .title-banner-second {
   font-family: $font-serif;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 19px;
   font-weight: 600;
-  color: $bleu-turkish;
+  color: $nude;
+  margin: 0;
+  margin-top: 10%;
+
+  @include lg {
+    font-size: 16px;
+  }
   @include md {
-    font-size: 1.3rem;
+    font-size: 14px;
   }
   @include sm {
-    font-size: 1.2rem;
+        margin-top: 12%;
+
+    font-size: 12px;
   }
   @include xs {
-    font-size: 1.1rem;
+
+    font-size: 10px;
   }
 }
 
 .contact-btn {
   background-color: $bleu-turkish;
   color: $nude;
-  padding: 10px 20px;
-  border: none;
+  padding: 7px 9px;
+  border: 1px solid $nude-rose;
   cursor: pointer;
-  font-size: 1.1rem;
   border-radius: 5px;
+  margin-bottom: 10%;
+  @include sm {
+    padding: 3px 5px;
+      margin-bottom: 12%;
+
+  }
+  @include xs {
+    padding: 2px 2px;
+  }
 }
 
 .banner-link {
   font-family: $font-serif;
   font-weight: normal;
-  font-size: 17px;
+  font-size: 13px;
   text-decoration: none;
   color: $nude;
-  margin-left: $spacing-sm;
+  margin: 0;
+  margin-top: 0%;
+
   &:hover {
     color: $sauge-fonce;
   }
   @include sm {
-    font-size: 15px;
+    font-size: 11px;
   }
   @include xs {
-    font-size: 13px;
+    font-size: 9px;
   }
 }
