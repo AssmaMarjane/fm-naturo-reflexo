@@ -1,7 +1,8 @@
 @use "../../style/main" as *;
 
 .naturo-container {
-  background: linear-gradient(180deg, $bleu-turkish 0%, $vert-sombre 25%, $vert-sombre3 50%, $vert-sombre 70%, $bleu-turkish 100%);
+  //background: url("../../assets/images/cadre-naturo.svg") center / 100% 100%;
+background: linear-gradient(180deg, $bleu-turkish 10%, $vert-sombre 40%, $vert-sombre 70%, $bleu-turkish 100%);
   display: flex;
   justify-content: center;
   padding: 50px 20px;
@@ -13,15 +14,44 @@
 .naturo-content {
   width: 70%;
   background-color: $brun;
-  background: linear-gradient(180deg, $bleu-turkish 0%, $vert-sombre 20%, $vert-sombre2 50%, $vert-sombre 75%, $bleu-turkish 100%);
+  background: linear-gradient(180deg, $bleu-turkish 7%, $vert-sombre 25%, $vert-sombre2 50%, $vert-sombre 75%, $bleu-turkish 100%);
   padding: 40px 50px;
   border: 2px solid $nude-rose;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(100, 140, 80, 0.15);
+box-shadow: 0 0 12px rgba(255, 220, 160, 0.6);
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
+   z-index: 1;
 }
+
+.naturo-content::before {
+  content: "";
+  position: absolute;
+  inset: -1px; // épaisseur du cadre
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(255, 230, 180, 0.9) 20deg,
+    rgba(255, 200, 120, 1) 40deg,
+    transparent 60deg,
+    transparent 360deg
+  );
+  animation: border-glow 10s linear infinite;
+  z-index: -1;
+}
+
+.naturo-content::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background: inherit;
+  z-index: -1;
+}
+
 
 .naturo-title {
   border-bottom: 2px solid $brun; /* ligne sous le titre */
@@ -83,7 +113,7 @@
   color: $nude;
   border: none;
   border-radius: 25px;
-  padding: 15px ;
+  padding: 15px;
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;

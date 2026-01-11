@@ -25,3 +25,13 @@
 .wizz {
   animation: wizz 0.5s ease;
 }
+
+
+@keyframes border-glow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
