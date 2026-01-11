@@ -4,8 +4,8 @@
   display: flex;
   align-items: center;
   background-color: none;
-  width: 75%;
-  height: 230px;
+  width: 80%;
+  height: 200px;
  align-self: center;
   @include sm {
     width: 100%;
@@ -58,7 +58,7 @@
 .decor-title {
   position: relative;
   z-index: 2;
-  width: 50%;
+  width: 80%;
   color: $nude;
   font-size: 35px;
   font-family: $font-script2;
