@@ -2,7 +2,7 @@
 
 .naturo-container {
   //background: url("../../assets/images/cadre-naturo.svg") center / 100% 100%;
-background: linear-gradient(180deg, $bleu-turkish 10%, $vert-sombre 40%, $vert-sombre 70%, $bleu-turkish 100%);
+  background: linear-gradient(180deg, $bleu-turkish 10%, $vert-sombre 40%, $vert-sombre 70%, $bleu-turkish 100%);
   display: flex;
   justify-content: center;
   padding: 50px 20px;
@@ -13,57 +13,47 @@ background: linear-gradient(180deg, $bleu-turkish 10%, $vert-sombre 40%, $vert-s
 
 .naturo-content {
   width: 70%;
-  background-color: $brun;
-  background: linear-gradient(180deg, $bleu-turkish 7%, $vert-sombre 25%, $vert-sombre2 50%, $vert-sombre 75%, $bleu-turkish 100%);
+  background-color: $nude;
+  //background: linear-gradient(180deg, $bleu-turkish 0%, $vert-sombre 25%, $vert-sombre2 50%, $vert-sombre 75%, $bleu-turkish 100%);
   padding: 40px 50px;
-  border: 2px solid $nude-rose;
+  border: 3px solid $bleu-turkish;
   border-radius: 15px;
-box-shadow: 0 0 12px rgba(255, 220, 160, 0.6);
+  box-shadow: 0 0 17px $nude;
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
-   z-index: 1;
+  z-index: 1;
+}
+
+@keyframes lightPulse {
+  0%, 100% {
+    transform: scale(1.05);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.85;
+  }
 }
 
 .naturo-content::before {
-  content: "";
-  position: absolute;
-  inset: -1px; // épaisseur du cadre
-  border-radius: inherit;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    rgba(255, 230, 180, 0.9) 20deg,
-    rgba(255, 200, 120, 1) 40deg,
-    transparent 60deg,
-    transparent 360deg
-  );
-  animation: border-glow 10s linear infinite;
-  z-index: -1;
-}
-
-.naturo-content::after {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  border-radius: inherit;
-  background: inherit;
-  z-index: -1;
+  animation: lightPulse 6s ease-in-out infinite;
 }
 
 
 .naturo-title {
+  color: $bleu-turkish;
+  font-weight: normal;
   border-bottom: 2px solid $brun; /* ligne sous le titre */
 }
 
 .naturo-subtitle {
   font-family: $font-serif;
   font-size: 24px;
-  color: $brun;
+  color: $bleu-turkish;
   margin-top: 30px;
   margin-bottom: 15px;
-  border-left: 4px solid $brun;
+  border-left: 4px solid $vert-sombre;
   padding-left: 10px;
   @include lg {
     font-size: 19px;
@@ -76,7 +66,7 @@ box-shadow: 0 0 12px rgba(255, 220, 160, 0.6);
 .naturo-text {
   font-size: 16px;
   line-height: 1.8;
-  color: $brun;
+  color: $bleu-turkish;
   margin-bottom: 25px;
   text-align: start;
   @include lg {
@@ -90,7 +80,7 @@ box-shadow: 0 0 12px rgba(255, 220, 160, 0.6);
 .naturo-text:first-letter {
   font-size: 22px;
   font-weight: bold;
-  color: $brun;
+  color: $bleu-turkish-md;
   @include lg {
     font-size: 20px;
   }
@@ -136,6 +126,7 @@ box-shadow: 0 0 12px rgba(255, 220, 160, 0.6);
   background: linear-gradient(45deg, $sauge-fonce, $brun);
 }
 
+/**
 .decor-section {
   position: relative;
   width: 100%;
@@ -172,3 +163,4 @@ box-shadow: 0 0 12px rgba(255, 220, 160, 0.6);
     transform: translateX(-50%);
   }
 }
+*/

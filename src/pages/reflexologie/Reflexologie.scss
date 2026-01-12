@@ -1,7 +1,7 @@
 @use "../../style/main" as *;
 
 .reflexo-container {
-  background: linear-gradient(180deg, $bleu-turkish 0%, $nude-clair 25%, $brun-lgt 70%, $bleu-turkish 100%); 
+  background: linear-gradient(180deg, $bleu-turkish 0%, $brun 20%, $brun-lgt 40%, $brun 60%, $bleu-turkish 100%);
   display: flex;
   justify-content: center;
   padding: 50px 20px;
@@ -13,11 +13,11 @@
 .reflexo-content {
   width: 70%;
   background-color: $nude; 
-  background: linear-gradient(180deg, $bleu-turkish 0%, $brun 20%, $brun-lgt 40%, $brun 60%, $bleu-turkish 100%);
+  //background: linear-gradient(180deg, $bleu-turkish 0%, $brun 20%, $brun-lgt 40%, $brun 60%, $bleu-turkish 100%);
   padding: 40px 50px;
-  border: 2px solid $brun-lgt; 
+  border: 3px solid $brun;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(100, 140, 80, 0.15); /* ombre verte douce */
+  box-shadow: 0 0 17px $nude;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -25,12 +25,14 @@
 
 .reflexo-title {
   border-bottom: 2px solid $brun-lgt; /* ligne sous le titre */
+  color: $brun;
+
 }
 
 .reflexo-subtitle {
   font-family: $font-serif;
   font-size: 24px;
-  color: $nude;
+  color: $brun;
   margin-top: 30px;
   margin-bottom: 15px;
   border-left: 4px solid $nude-fonce;
@@ -46,7 +48,7 @@
 .reflexo-text {
   font-size: 16px;
   line-height: 1.8;
-  color: $nude;
+  color: $brun;
   margin-bottom: 25px;
   text-align: start;
   @include lg {
@@ -60,7 +62,7 @@
 .reflexo-text:first-letter {
   font-size: 22px;
   font-weight: bold;
-  color: $nude-clair;
+  color: $brun-lgt;
   @include lg {
     font-size: 20px;
   }
