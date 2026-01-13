@@ -1,0 +1,38 @@
+/* Formulaire Connexion */
+@use "../../style/main" as *;
+
+.login-form-section {
+    align-self: center;
+  font-weight: normal;
+  box-sizing: border-box;
+  width: 50%;
+  margin: 3rem auto 0 auto;
+  padding: 2rem;
+  margin: 10%;
+  border-radius: 8px;
+  box-shadow: 0 0 50px 15px rgba(0, 0, 0, 0.5);
+  @include md {
+    width: 75%;
+  }
+  @include sm {
+    width: 90%;
+  }
+  @include xs {
+    width: 93%;
+  }
+}
+
+.login-title {
+  font-family: $font-serif;
+  color: $brun;
+  font-weight: bold;
+  @include md {
+    font-size: 1.7rem;
+  }
+  @include sm {
+    font-size: 1.4rem;
+  }
+  @include xs {
+    font-size: 1.1rem;
+  }
+}

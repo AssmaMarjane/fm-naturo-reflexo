@@ -4,6 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { loginAdmin } from "../../api/contactApi";
 import { loginSuccess } from "../../store/authSlice";
 
+import "../../style/main.scss";
+import "./LoginPage.scss";
+
+
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,11 +21,11 @@ function LoginPage() {
       const res = await loginAdmin(username, password);
 
       // Sauvegarder token dans localStorage si rememberMe
-    if (rememberMe) {
-      localStorage.setItem("adminToken", JSON.stringify(res.user));
-    } else {
-      sessionStorage.setItem("adminToken", JSON.stringify(res.user));
-    }
+      if (rememberMe) {
+        localStorage.setItem("adminToken", JSON.stringify(res.user));
+      } else {
+        sessionStorage.setItem("adminToken", JSON.stringify(res.user));
+      }
       dispatch(loginSuccess(res.user));
 
       alert("Connecté !");
@@ -32,23 +36,42 @@ function LoginPage() {
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <h2>Connexion admin</h2>
-      <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Identifiant" required autoComplete="username" />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Mot de passe"
-        required
-        autoComplete="current-password"
-      />
-      <div>
-        <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} id="remember-me" />
-        <label htmlFor="remember-me">Se souvenir de moi</label>
-      </div>
-      <button type="submit">Connexion</button>
-    </form>
+    <section className="login-form-section">
+      <h2 className="login-title">Connexion Ablam</h2>
+
+      <form onSubmit={handleLogin}>
+        <div className="input-wrapper">
+          <label htmlFor="identifiant">Identifiant</label>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Identifiant"
+            required
+            autoComplete="username"
+          />
+        </div>
+
+        <div className="input-wrapper">
+          <label htmlFor="password">Mot de passe</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Mot de passe"
+            required
+            autoComplete="current-password"
+          />
+        </div>
+
+        <div>
+          <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} id="remember-me" />
+          <label htmlFor="remember-me">Se souvenir de moi</label>
+        </div>
+
+        <button type="submit">Connexion</button>
+      </form>
+    </section>
   );
 }
 
