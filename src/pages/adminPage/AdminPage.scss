@@ -1,20 +1,50 @@
 @use "../../style/main" as *;
 
 .admin-container {
-  background: linear-gradient(180deg, $bleu-turkish 0%, #3e1f53 20%, $vert-sombre 40%, $bleu-turkish 97%);
+  background: linear-gradient(
+    180deg,
+    $bleu-turkish 0%,
+    #3e1f53 20%,
+    $vert-sombre 40%,
+    $bleu-turkish 97%
+  );
   display: flex;
-  flex-direction: row; // ✅ On met nav + contenu côte à côte
+  flex-direction: row;
   justify-content: space-between;
   padding: 20px;
   min-height: 100vh;
   font-family: $font-serif;
   position: relative;
+  overflow: hidden; // 🔑 évite que le blur déborde
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0; // top:0; right:0; bottom:0; left:0;
+    
+    background-image: url("../../assets/images/zelije-violet.svg");
+    background-repeat: repeat;
+    background-size: 90px 90px;
+
+    filter: blur(1px);        // 🔥 BLUR
+    opacity: 0.2;            // 🔥 effet luxe discret
+    pointer-events: none;     // 🔑 ne bloque pas les clics
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1; // contenu AU-DESSUS du motif
+  }
+
   @include md {
     flex-direction: column;
     justify-content: center;
   }
 }
-
+.admin-content {
+  width: 85%;
+}
 .admin-nav {
   display: flex;
   flex-direction: column;
@@ -62,8 +92,15 @@
   }
 }
 
-.dashbd-title {
+.dashbd-title,
+.dashbd-subtitle {
   margin: 7%;
+  font-weight: normal;
+  text-align: center;
+  font-family: $font-script1;
+  font-size: 30px;
+
+  color: $nude;
 }
 .update-section {
   display: flex;
@@ -293,16 +330,15 @@
   }
 }
 
-.update-section-title{
+.update-section-title {
   color: $nude;
   font-family: $font-secondary;
 }
 
-.admin-rdv-list{
+.admin-rdv-list {
   width: 80%;
-
 }
-.rdv-table{
+.rdv-table {
   background-color: $nude;
   padding: 3%;
 }
@@ -315,7 +351,8 @@
     border-collapse: collapse;
     font-family: Arial, sans-serif;
 
-    th, td {
+    th,
+    td {
       border: 1px solid #ccc;
       padding: 8px;
       text-align: left;
@@ -328,14 +365,16 @@
 
     // Breakpoints
     @include sm {
-      th, td {
+      th,
+      td {
         padding: 6px;
         font-size: 0.8rem;
       }
     }
 
     @include xs {
-      th, td {
+      th,
+      td {
         padding: 5px;
         font-size: 0.75rem;
       }

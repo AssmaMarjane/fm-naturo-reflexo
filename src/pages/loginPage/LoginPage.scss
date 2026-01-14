@@ -1,8 +1,14 @@
 /* Formulaire Connexion */
 @use "../../style/main" as *;
 
+.login-container {
+  background: $bleu-turkish;
+}
+
 .login-form-section {
-    align-self: center;
+  background: linear-gradient(180deg, rgb(71, 30, 71), $vert-sombre 40%, $vert-sombre 70%, rgb(71, 30, 71) 100%);
+
+  align-self: center;
   font-weight: normal;
   box-sizing: border-box;
   width: 50%;
@@ -10,7 +16,7 @@
   padding: 2rem;
   margin: 10%;
   border-radius: 8px;
-  box-shadow: 0 0 50px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 50px 15px rgba(248, 243, 243, 0.5);
   @include md {
     width: 75%;
   }

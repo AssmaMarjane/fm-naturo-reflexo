@@ -1,45 +1,50 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { loginAdmin } from "../../api/contactApi";
+import { loginAdmin } from "../../api/adminApi";
 import { loginSuccess } from "../../store/authSlice";
 
 import "../../style/main.scss";
 import "./LoginPage.scss";
 
-
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState("");
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [rememberMe, setRememberMe] = useState(false);
+
+  //const [rememberMe, setRememberMe] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      const res = await loginAdmin(username, password);
+    setError("");
 
-      // Sauvegarder token dans localStorage si rememberMe
-      if (rememberMe) {
-        localStorage.setItem("adminToken", JSON.stringify(res.user));
-      } else {
-        sessionStorage.setItem("adminToken", JSON.stringify(res.user));
-      }
+    try {
+      const res = await loginAdmin(username, password, rememberMe);
+
       dispatch(loginSuccess(res.user));
 
-      alert("Connecté !");
+      //alert("Connecté !");
+
       navigate("/gestion");
-    } catch {
-      alert("Identifiants incorrects");
+    } catch (err) {
+      setError(err.message || "Identifiants incorrects");
+      //alert("Identifiants incorrects");
     }
   };
 
   return (
+        <div className="login-container">
+
     <section className="login-form-section">
       <h2 className="login-title">Connexion Ablam</h2>
 
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} className="login-form">
+        {error && <p className="error">{error}</p>}
+
         <div className="input-wrapper">
           <label htmlFor="identifiant">Identifiant</label>
           <input
@@ -63,15 +68,17 @@ function LoginPage() {
             autoComplete="current-password"
           />
         </div>
-
-        <div>
-          <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} id="remember-me" />
+        <div className="remember-me">
+          <input type="checkbox" id="remember-me" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} />
           <label htmlFor="remember-me">Se souvenir de moi</label>
         </div>
 
-        <button type="submit">Connexion</button>
+        <button type="submit" className="login-button">
+          Connexion
+        </button>
       </form>
     </section>
+    </div>
   );
 }
 
@@ -150,4 +157,14 @@ function Form() {
 }
 
 export default Form;
+ */
+
+
+      /**
+ *       // Sauvegarder token dans localStorage si rememberMe
+      if (rememberMe) {
+        localStorage.setItem("adminToken", JSON.stringify(res.user));
+      } else {
+        sessionStorage.setItem("adminToken", JSON.stringify(res.user));
+      }
  */

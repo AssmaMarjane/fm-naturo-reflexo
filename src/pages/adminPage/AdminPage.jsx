@@ -23,7 +23,7 @@ import ContactModal from "../../components/admin/ContactModal";
 function AdminPage() {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const dispoHandlers = useDispoHandlers(isLoggedIn);
-    const rdvHandlers = useRdvHandlers(isLoggedIn);
+  const rdvHandlers = useRdvHandlers(isLoggedIn);
   const contactHandlers = useContactHandlers(isLoggedIn);
 
   const [activeSection, setActiveSection] = useState("dispo-calendar+rdv-calendar");
@@ -50,7 +50,8 @@ function AdminPage() {
     <div className="admin-container">
       {/* Contenu principal */}
       <div className="admin-content">
-        <h2 className="dashbd-title">Tableau de bord</h2>
+        <h2 className="dashbd-title">Coucou Fatima 🙋🏽‍♀️ </h2>
+        <h3 className="dashbd-subtitle"> Ici tu géres ton planning, avec sourire et un peu de çay ! 😎☕</h3>
         {/* Section active */}
         {activeSection === "dispo-calendar+rdv-calendar" && (
           <div className="dual-calendar">
