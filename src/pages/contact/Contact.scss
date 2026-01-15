@@ -2,11 +2,10 @@
 
 .contact-container {
   width: 85%;
-  background: linear-gradient(180deg, $bleu-turkish 5%, $vert-sombre 25%, $vert-plante 70%, $bleu-turkish 95%); /* beige vers vert clair */
+  background: linear-gradient(180deg, $bleu-turkish 5%, $vert-sombre 50%,  $bleu-turkish 95%); /* beige vers vert clair */
   display: flex;
   justify-content: center;
   padding: 15px 15px;
-  min-height: 100vh;
   font-family: $font-serif;
   position: relative;
 
