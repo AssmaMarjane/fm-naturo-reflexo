@@ -147,7 +147,7 @@ function FormContact() {
 
   return (
     <section className="contact-form-section">
-      <h2 className="form-title">Contact / Réservation</h2>
+      <h2 className="form-title">Contact</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-wrapper">
           <label htmlFor="nom">Nom</label>

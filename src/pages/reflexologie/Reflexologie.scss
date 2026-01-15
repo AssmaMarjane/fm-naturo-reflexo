@@ -8,6 +8,26 @@
   min-height: 100vh;
   font-family: "Libre Baskerville", serif;
   position: relative;
+        &::after {
+    content: "";
+    position: absolute;
+    inset: 0; // top:0; right:0; bottom:0; left:0;
+    
+    background-image: url("../../assets/logos/logofm_2px.png");
+    background-repeat: repeat;
+    background-size: 65px 65px;
+
+    filter: blur(2px);        // 🔥 BLUR
+    opacity: 0.1;            // 🔥 effet luxe discret
+    pointer-events: none;     // 🔑 ne bloque pas les clics
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1; // contenu AU-DESSUS du motif
+  }
+
 }
 
 .reflexo-content {

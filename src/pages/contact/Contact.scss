@@ -1,24 +1,35 @@
 @use "../../style/main" as *;
 
 .contact-container {
-  width: 65%;
-  background: linear-gradient(180deg, $bleu-turkish 0%, $vert-sombre 25%, $vert-plante 70%, $bleu-turkish 95%); /* beige vers vert clair */
+  width: 85%;
+  background: linear-gradient(180deg, $bleu-turkish 5%, $vert-sombre 25%, $vert-plante 70%, $bleu-turkish 95%); /* beige vers vert clair */
   display: flex;
   justify-content: center;
-  padding: 20px 20px;
+  padding: 15px 15px;
   min-height: 100vh;
   font-family: $font-serif;
   position: relative;
-  @include lg {
-    width: 75%;
+
+    &::after {
+    content: "";
+    position: absolute;
+    inset: 0; // top:0; right:0; bottom:0; left:0;
+    
+    background-image: url("../../assets/logos/logofm_2px.png");
+    background-repeat: repeat;
+    background-size: 70px 70px;
+
+    filter: blur(1.4px);        // 🔥 BLUR
+    opacity: 0.2;            // 🔥 effet luxe discret
+    pointer-events: none;     // 🔑 ne bloque pas les clics
+    z-index: 0;
   }
-  @include md {
-    width: 80%;
+
+  > * {
+    position: relative;
+    z-index: 1; // contenu AU-DESSUS du motif
   }
-  @include sm {
-    width: 90%;
-  }
-  @include xs {
-    width: 93%;
-  }
+
+
 }
+
