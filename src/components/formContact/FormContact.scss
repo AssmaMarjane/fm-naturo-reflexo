@@ -80,11 +80,13 @@
 
 .submit-button {
   display: block;
-  width: 100%;
+  width: 40%;
   padding: 10px;
-  font-size: 1.1rem;
+  font-size: 16px;
   font-weight: bold;
   margin-top: 1rem;
+  margin-bottom: 2%;
+  justify-self: center;
   border: none;
   border-radius: 4px;
     background: linear-gradient(45deg, $vert-sombre, $nude);
@@ -93,10 +95,10 @@
   cursor: pointer;
   transition: $sauge-fonce 0.3s ease;
   @include sm {
-    font-size: 0.9rem;
+    font-size: 13px;
   }
   @include xs {
-    font-size: 0.7rem;
+    font-size: 10px;
   }
 }
 
