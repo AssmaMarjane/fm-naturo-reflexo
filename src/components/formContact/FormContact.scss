@@ -2,7 +2,7 @@
 @use "../../style/main" as *;
 
 .contact-form-section {
-    background: linear-gradient(180deg, $bleu-turkish 0%, $vert-sombre 50%, $bleu-turkish 95%); /* beige vers vert clair */
+  background: linear-gradient(180deg, $bleu-turkish 0%, $vert-sombre 50%, $bleu-turkish 97%); /* beige vers vert clair */
 
   font-weight: normal;
   box-sizing: border-box;
@@ -13,14 +13,13 @@
   box-shadow: 0 0 50px 15px rgba(0, 0, 0, 0.5);
   @include md {
     width: 80%;
-      padding: 3%;
-
+    padding: 3%;
   }
 }
 
 .form-title {
   font-family: $font-serif;
-  color: $brun;
+  color: $nude;
   font-weight: bold;
   @include md {
     font-size: 1.7rem;
@@ -62,7 +61,7 @@
   background-color: $nude;
   border: 1px solid $nude;
   border-radius: 4px;
-  resize: vertical; 
+  resize: vertical;
   @include md {
     font-size: 0.9rem;
   }
@@ -89,7 +88,7 @@
   justify-self: center;
   border: none;
   border-radius: 4px;
-    background: linear-gradient(45deg, $vert-sombre, $nude);
+  background: linear-gradient(45deg, $vert-sombre, $nude);
 
   color: $brun;
   cursor: pointer;
@@ -105,7 +104,7 @@
 .submit-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(100, 140, 80, 0.3);
-    background: linear-gradient(45deg, $nude, $vert-sombre);
+  background: linear-gradient(45deg, $nude, $vert-sombre);
 }
 
 .error-message {
@@ -120,7 +119,7 @@
   border: 1px solid $nude;
   border-radius: 4px;
   background-color: $nude;
-  appearance: none; 
+  appearance: none;
   cursor: pointer;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   @include md {
@@ -134,10 +133,10 @@
   }
 }
 
-.presta-option{
-    font-size: 0.9rem;
+.presta-option {
+  font-size: 0.9rem;
 
-    @include md {
+  @include md {
     font-size: 0.7rem;
   }
   @include sm {
@@ -146,7 +145,6 @@
   @include xs {
     font-size: 0.55rem;
   }
-
 }
 
 .calendar-toggle {

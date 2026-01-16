@@ -30,8 +30,8 @@ function Prestations() {
           </div>
 
           {selected !== null && (
-            <div className="modal-overlay" onClick={closeModal}>
-              <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="presta-modal-overlay" onClick={closeModal}>
+              <div className="presta-modal-content" onClick={(e) => e.stopPropagation()}>
                 <h3 className="modal-title">{prestations[selected].nom}</h3>
                 <p className="modal-text">
                   <strong>Durée :</strong> {prestations[selected].duree}
