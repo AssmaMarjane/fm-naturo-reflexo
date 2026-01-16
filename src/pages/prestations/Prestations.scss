@@ -2,8 +2,8 @@
 
 .prestations-section {
   text-align: center;
-  background: linear-gradient(180deg, $bleu-turkish 0%, $vert-sombre 35%, $nude 50%, $vert-sombre 70%, $bleu-turkish 100%);
- /*
+  background: linear-gradient(180deg, $bleu-turkish 0%, $bleu-turkish-md 33%, $nude 50%, $bleu-turkish-md 68%, $bleu-turkish 100%);
+  /*
   background: white url("../../assets/icons/decoration.png") center / 100% 100% repeat;
   */
   padding: 20px 20px;
@@ -25,7 +25,10 @@
   padding: 1rem;
   border-radius: 8px;
   background-color: $nude;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ // border: 1px solid $bleu-turkish;
+  border-radius: 15px;
+  box-shadow: 0 0 20px $nude;
+
   cursor: pointer;
   transition: transform 0.2s ease;
 
@@ -120,9 +123,12 @@
 .presta-modal-content {
   background-color: $nude;
   padding: 1rem;
-  border-radius: 8px;
-  width: 300px;
+  width: 450px;
   text-align: left;
+  border: 3px solid $bleu-turkish-md;
+  border-radius: 15px;
+  box-shadow: 0 0 25px $bleu-turkish-md;
+
   @include sm {
     width: 250px;
   }
@@ -168,8 +174,8 @@
 
   .presta-button {
     font-family: $font-serif;
-    background: linear-gradient(45deg, $vert-plante, $vert-sombre);
-    color: $brun;
+    background: linear-gradient(45deg, $bleu-turkish, $bleu-turkish-md);
+    color: $nude;
     border: none;
     border-radius: 10px;
     padding: 12px 23px;
@@ -190,6 +196,6 @@
   .presta-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(100, 140, 80, 0.3);
-    background: linear-gradient(45deg, $vert-sombre, $vert-plante);
+    background: linear-gradient(45deg, $bleu-turkish-md, $bleu-turkish);
   }
 }
