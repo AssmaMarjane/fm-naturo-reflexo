@@ -150,28 +150,28 @@ function FormContact() {
       <h2 className="form-title">Contact</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-wrapper">
-          <label htmlFor="nom">Nom</label>
+          <label htmlFor="nom" className="form-label">Nom</label>
           <input type="text" id="nom" name="nom" value={formData.nom} onChange={handleChange} required />
         </div>
 
-        <div className="input-wrapper">
-          <label htmlFor="prenom">Prénom</label>
+        <div className="input-wrapper" >
+          <label htmlFor="prenom" className="form-label">Prénom</label>
           <input type="text" id="prenom" name="prenom" value={formData.prenom} onChange={handleChange} required />
         </div>
 
         <div className="input-wrapper">
-          <label htmlFor="telephone">Numéro de portable</label>
+          <label htmlFor="telephone" className="form-label">Numéro de portable</label>
           <input type="tel" id="telephone" name="telephone" value={formData.telephone} onChange={handleChange} required />
         </div>
 
         <div className="input-wrapper">
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message" className="form-label">Message</label>
           <textarea id="message" name="message" value={formData.message} onChange={handleChange} required />
         </div>
 
         <div className="input-wrapper">
           <label>
-            <input type="checkbox" checked={isBooking} onChange={(e) => setIsBooking(e.target.checked)} />
+            <input type="checkbox" checked={isBooking} onChange={(e) => setIsBooking(e.target.checked)} className="form-label"/>
             Réserver un RDV
           </label>
         </div>
