@@ -71,22 +71,21 @@ function FormContact() {
       return;
     }
 
-      // Si case cochée → il faut aussi valider la réservation
-  if (isBooking) {
-    if (!formData.prestation) {
-      alert("Veuillez choisir une prestation.");
-      return;
+    // Si case cochée → il faut aussi valider la réservation
+    if (isBooking) {
+      if (!formData.prestation) {
+        alert("Veuillez choisir une prestation.");
+        return;
+      }
+      if (!formData.date) {
+        alert("Veuillez choisir une date.");
+        return;
+      }
+      if (!formData.heure) {
+        alert("Veuillez choisir un créneau horaire.");
+        return;
+      }
     }
-    if (!formData.date) {
-      alert("Veuillez choisir une date.");
-      return;
-    }
-    if (!formData.heure) {
-      alert("Veuillez choisir un créneau horaire.");
-      return;
-    }
-  }
-
 
     // Formater nom et prénom
     let formattedData = {
@@ -95,35 +94,34 @@ function FormContact() {
       prenom: formatName(formData.prenom),
     };
 
-  // 🔹 Si ce n’est pas une réservation → on ajoute date/heure actuelles
-  if (!isBooking) {
-    const now = new Date();
-    formattedData = {
-      ...formattedData,
-      date: now.toLocaleDateString("fr-FR"), // format "29/09/2025"
-      heure: now.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }), // format "14:32"
-    };
-  }
+    // 🔹 Si ce n’est pas une réservation → on ajoute date/heure actuelles
+    if (!isBooking) {
+      const now = new Date();
+      formattedData = {
+        ...formattedData,
+        date: now.toLocaleDateString("fr-FR"), // format "29/09/2025"
+        heure: now.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }), // format "14:32"
+      };
+    }
 
     console.log("Données du formulaire :", formattedData);
-   
-   
-    try {
-    if (isBooking) {
-      // → RDV
-      await sendRdvForm(formattedData);
-      alert("Votre rendez-vous a été réservé !");
-    } else {
-      // → Contact simple
-      await sendContactForm(formattedData);
-      alert("Votre message a été envoyé !");
-    }
 
-    // Mise à jour des dispos si RDV
-    if (isBooking) {
-      const newDispo = await getDispo();
-      setDispoState(newDispo);
-    }
+    try {
+      if (isBooking) {
+        // → RDV
+        await sendRdvForm(formattedData);
+        alert("Votre rendez-vous a été réservé !");
+      } else {
+        // → Contact simple
+        await sendContactForm(formattedData);
+        alert("Votre message a été envoyé !");
+      }
+
+      // Mise à jour des dispos si RDV
+      if (isBooking) {
+        const newDispo = await getDispo();
+        setDispoState(newDispo);
+      }
 
       setFormData({
         nom: "",
@@ -150,28 +148,36 @@ function FormContact() {
       <h2 className="form-title">Contact</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-wrapper">
-          <label htmlFor="nom" className="form-label">Nom</label>
+          <label htmlFor="nom" className="form-label">
+            Nom
+          </label>
           <input type="text" id="nom" name="nom" value={formData.nom} onChange={handleChange} required />
         </div>
 
-        <div className="input-wrapper" >
-          <label htmlFor="prenom" className="form-label">Prénom</label>
+        <div className="input-wrapper">
+          <label htmlFor="prenom" className="form-label">
+            Prénom
+          </label>
           <input type="text" id="prenom" name="prenom" value={formData.prenom} onChange={handleChange} required />
         </div>
 
         <div className="input-wrapper">
-          <label htmlFor="telephone" className="form-label">Numéro de portable</label>
+          <label htmlFor="telephone" className="form-label">
+            Numéro de portable
+          </label>
           <input type="tel" id="telephone" name="telephone" value={formData.telephone} onChange={handleChange} required />
         </div>
 
         <div className="input-wrapper">
-          <label htmlFor="message" className="form-label">Message</label>
+          <label htmlFor="message" className="form-label">
+            Message
+          </label>
           <textarea id="message" name="message" value={formData.message} onChange={handleChange} required />
         </div>
 
         <div className="input-wrapper">
           <label>
-            <input type="checkbox" checked={isBooking} onChange={(e) => setIsBooking(e.target.checked)} className="form-label"/>
+            <input type="checkbox" checked={isBooking} onChange={(e) => setIsBooking(e.target.checked)} className="form-label" />
             Réserver un RDV
           </label>
         </div>
@@ -181,7 +187,14 @@ function FormContact() {
             {/*  select pour les prestations */}
             <div className="input-wrapper">
               <label htmlFor="prestation">Sélectionnez une prestation</label>
-              <select className="presta-select" id="prestation" name="prestation" value={formData.prestation} onChange={handleChange} required={isBooking}>
+              <select
+                className="presta-select"
+                id="prestation"
+                name="prestation"
+                value={formData.prestation}
+                onChange={handleChange}
+                required={isBooking}
+              >
                 <option className="presta-option" value="">
                   Choisir une prestation{" "}
                 </option>
@@ -209,6 +222,9 @@ function FormContact() {
 
               {showCalendar && (
                 <Calendar
+                  view="month"
+                  maxDetail="year"
+                  minDetail="month"
                   onClickDay={(date) => {
                     setFormData((prev) => ({
                       ...prev,
