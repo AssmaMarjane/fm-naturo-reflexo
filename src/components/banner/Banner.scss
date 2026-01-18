@@ -57,7 +57,7 @@
 }
 
 .slide-second {
-  background: url("../../assets/images/banner-lolypop.svg") center / 100% 100%;
+  background: url("../../assets/images/banner-lolypop-for.svg") center / 100% 100%;
 }
 
 .slide.active {
@@ -106,44 +106,44 @@
 }
 
 .title-banner {
-  font-size: 22px;
+  font-size: 17px;
   font-family: $font-secondary;
   margin: 0;
   position: absolute;
   top: 75%;
 
   @include lg {
-    font-size: 18px;
+    font-size: 15px;
   }
   @include md {
-    font-size: 16px;
+    font-size: 14px;
   }
   @include sm {
-    font-size: 14px;
+    font-size: 13px;
   }
   @include xs {
     font-size: 11px;
   }
 }
 .subtitle-fm {
-  font-family: $font-serif;
-  font-size: 15px;
+  font-family: $font-script2;
+  font-size: 22px;
   position: absolute;
   top: 90%;
 
   @include md {
-    font-size: 12px;
+    font-size: 20px;
   }
   @include sm {
-    font-size: 11px;
+    font-size: 18px;
   }
   @include xs {
-    font-size: 9px;
+    font-size: 11px;
   }
 }
 
 .title-banner-second {
-  font-family: $font-serif;
+  font-family: $font-secondary;
   font-size: 19px;
   font-weight: 600;
   color: $nude;
