@@ -1,5 +1,5 @@
 @use "../../style/main" as *;
-
+/*1*/
 .banner {
   position: relative;
   width: 85%;
@@ -38,12 +38,13 @@
   }
 
   .overlay {
-    justify-items: center;
     width: 60%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
     color: $nude;
     text-align: center;
     @include xs {
@@ -66,12 +67,13 @@
 }
 
 .fm-banner {
+  color: $nude;
   font-size: 42px;
   font-family: $font-script2;
   margin: 0;
   margin-bottom: 0;
   font-weight: normal;
-  margin-top: 4%;
+ // margin-top: 4%;
   @include lg {
     font-size: 37px;
   }
@@ -84,33 +86,15 @@
   @include xs {
     font-size: 27px;
   }
-
-  span {
-    font-family: $font-script4;
-    font-size: 56px;
-    font-weight: normal;
-    margin: 0;
-    @include lg {
-      font-size: 53px;
-    }
-    @include md {
-      font-size: 50px;
-    }
-    @include sm {
-      font-size: 48px;
-    }
-    @include xs {
-      font-size: 45px;
-    }
-  }
 }
 
 .title-banner {
   font-size: 17px;
   font-family: $font-secondary;
-  margin: 0;
+  margin: 6px 0;
   position: absolute;
-  top: 75%;
+  //top: 75%;
+  color: $nude;
 
   @include lg {
     font-size: 15px;
@@ -128,8 +112,10 @@
 .subtitle-fm {
   font-family: $font-script2;
   font-size: 22px;
-  position: absolute;
-  top: 90%;
+  //position: absolute;
+  //top: 90%;
+  margin-bottom: 12px;
+    color: $nude;
 
   @include md {
     font-size: 20px;
@@ -157,12 +143,11 @@
     font-size: 14px;
   }
   @include sm {
-        margin-top: 12%;
+    margin-top: 12%;
 
     font-size: 12px;
   }
   @include xs {
-
     font-size: 10px;
   }
 }
@@ -174,11 +159,11 @@
   border: 1px solid $nude-rose;
   cursor: pointer;
   border-radius: 5px;
-  margin-bottom: 10%;
+  margin-top: 10px;
+  //margin-bottom: 10%;
   @include sm {
     padding: 3px 5px;
-      margin-bottom: 12%;
-
+    margin-bottom: 12%;
   }
   @include xs {
     padding: 2px 2px;
@@ -203,4 +188,153 @@
   @include xs {
     font-size: 9px;
   }
+}
+
+/*---------------------------------------------------------------*/
+
+
+/***--------------------------------------------------------*/
+.cinema {
+  position: relative;
+  overflow: hidden;
+  background: url("../../assets/images/banner-turk-blur.svg") center / 100% 100%;
+  width: 85%;
+
+}
+
+/* CHANGE DE FOND AU FINAL */
+.step-3 {
+  background: url("../../assets/images/banner-lolypop-for.svg") center / 100% 100%;
+  width: 85%;
+
+}
+
+.words {
+  position: absolute;
+  inset: 0;
+}
+
+.word {
+  position: absolute;
+  font-family: $font-secondary;
+  font-size: 18px;
+  color: $nude;
+
+  opacity: 0;
+  filter: blur(14px);
+  animation: wordAppear 2.2s ease forwards;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.3),
+    0 0 24px rgba(255,200,150,0.25);
+
+  @include sm {
+    font-size: 14px;
+  }
+}
+
+/* POSITIONS */
+.top-left {
+  top: 15%;
+  left: 10%;
+}
+.top-right {
+  top: 15%;
+  right: 10%;
+}
+.left-center {
+  top: 50%;
+  left: 8%;
+}
+.right-center {
+  top: 50%;
+  right: 8%;
+}
+.bottom-center {
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* PHRASE */
+.sentence {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  max-width: 70%;
+  text-align: center;
+
+  font-family: $font-secondary;
+  font-size: 20px;
+  color: $nude;
+
+  opacity: 0;
+  animation: sentenceAppear 3s ease forwards;
+
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.35),
+    0 0 28px rgba(255,200,150,0.3);
+
+  @include sm {
+    font-size: 14px;
+  }
+}
+/* FINAL */
+
+.final-block {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  animation: finalAppear 3s ease forwards;
+}
+
+/* ANIMATIONS */
+
+@keyframes wordAppear {
+  from {
+    opacity: 0;
+    filter: blur(18px);
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+@keyframes sentenceAppear {
+  from {
+    opacity: 0;
+    filter: blur(14px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes finalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* lueur douce */
+.glow {
+  text-shadow:
+    0 0 14px rgba(255,255,255,0.4),
+    0 0 32px rgba(255,200,150,0.35);
 }
