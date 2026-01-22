@@ -73,7 +73,7 @@
   margin: 0;
   margin-bottom: 0;
   font-weight: normal;
- // margin-top: 4%;
+  // margin-top: 4%;
   @include lg {
     font-size: 37px;
   }
@@ -89,42 +89,40 @@
 }
 
 .title-banner {
-  font-size: 17px;
+  font-size: 15px;
   font-family: $font-secondary;
-  margin: 6px 0;
-  position: absolute;
+  margin: 0;
+  //position: absolute;
   //top: 75%;
   color: $nude;
 
   @include lg {
-    font-size: 15px;
-  }
-  @include md {
-    font-size: 14px;
-  }
-  @include sm {
     font-size: 13px;
   }
-  @include xs {
+  @include md {
+    font-size: 12px;
+  }
+  @include sm {
     font-size: 11px;
+  }
+  @include xs {
+    font-size: 10px;
   }
 }
 .subtitle-fm {
   font-family: $font-script2;
-  font-size: 22px;
+  font-size: 18px;
+  margin: 0;
   //position: absolute;
   //top: 90%;
-  margin-bottom: 12px;
-    color: $nude;
+  //margin-bottom: 12px;
+  color: $nude;
 
   @include md {
-    font-size: 20px;
+    font-size: 15px;
   }
   @include sm {
-    font-size: 18px;
-  }
-  @include xs {
-    font-size: 11px;
+    font-size: 13px;
   }
 }
 
@@ -159,11 +157,11 @@
   border: 1px solid $nude-rose;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 5px;
   //margin-bottom: 10%;
   @include sm {
     padding: 3px 5px;
-    margin-bottom: 12%;
+    margin-bottom: 2%;
   }
   @include xs {
     padding: 2px 2px;
@@ -192,21 +190,18 @@
 
 /*---------------------------------------------------------------*/
 
-
 /***--------------------------------------------------------*/
 .cinema {
   position: relative;
   overflow: hidden;
-  background: url("../../assets/images/banner-turk-blur.svg") center / 100% 100%;
-  width: 85%;
-
+  background: url("../../assets/images/banner-kareem.svg") center / 100% 100%;
+  //width: 85%;
 }
 
 /* CHANGE DE FOND AU FINAL */
 .step-3 {
-  background: url("../../assets/images/banner-lolypop-for.svg") center / 100% 100%;
-  width: 85%;
-
+  background: url("../../assets/images/banner-kareem.svg") center / 100% 100%;
+  //width: 85%;
 }
 
 .words {
@@ -225,35 +220,56 @@
   animation: wordAppear 2.2s ease forwards;
 
   text-shadow:
-    0 0 10px rgba(255,255,255,0.3),
-    0 0 24px rgba(255,200,150,0.25);
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 24px rgba(255, 200, 150, 0.25);
 
-  @include sm {
-    font-size: 14px;
+  @include md {
+    font-size: 10px;
   }
 }
 
 /* POSITIONS */
 .top-left {
-  top: 30%;
-  left: 10%;
-}
-.top-right {
-  top: 30%;
-  right: 10%;
+  top: 14%;
+  left: 32%;
+  @include md {
+    top: 27%;
+    left: 23%;
+  }
 }
 .left-center {
-  top: 50%;
-  left: 6%;
+  top: 67%;
+  left: 29%;
+  @include md {
+    left: 24%;
+  }
 }
+.top-right {
+  top: 11%;
+  right: 30%;
+  @include md {
+    top: 17%;
+    right: 25%;
+  }
+}
+
 .right-center {
-  top: 50%;
-  right: 6%;
+  top: 40%;
+  right: 26%;
+  @include md {
+    right: 20%;
+      top: 33%;
+
+  }
 }
 .bottom-center {
-  bottom: 20%;
-  left: 40%;
+  bottom: 18%;
+  left: 47%;
   transform: translateX(-50%);
+  @include md {
+    bottom: 15%;
+    left: 45%;
+  }
 }
 
 /* PHRASE */
@@ -274,11 +290,11 @@
   animation: sentenceAppear 3s ease forwards;
 
   text-shadow:
-    0 0 12px rgba(255,255,255,0.35),
-    0 0 28px rgba(255,200,150,0.3);
+    0 0 12px rgba(255, 255, 255, 0.35),
+    0 0 28px rgba(255, 200, 150, 0.3);
 
-  @include sm {
-    font-size: 14px;
+  @include md {
+    font-size: 12px;
   }
 }
 /* FINAL */
@@ -286,12 +302,10 @@
 .final-block {
   position: absolute;
   inset: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   opacity: 0;
   animation: finalAppear 3s ease forwards;
 }
@@ -335,6 +349,6 @@
 /* lueur douce */
 .glow {
   text-shadow:
-    0 0 14px rgba(255,255,255,0.4),
-    0 0 32px rgba(255,200,150,0.35);
+    0 0 14px rgba(255, 255, 255, 0.4),
+    0 0 32px rgba(255, 200, 150, 0.35);
 }

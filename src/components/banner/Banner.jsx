@@ -75,10 +75,12 @@ function Banner() {
 
             <h3 className="title-banner">Naturopathe x Réflexologue </h3>
             <p className="subtitle-fm">La santé au coeur du bien-être</p>
-              <Link to="/contact" className="contact-btn">
-                Prendre rendez-vous
-              </Link>
-          </div>
+          <button className="contact-btn">
+            <Link to="/contact" className="banner-link">
+              Prendre rendez-vous
+            </Link>
+          </button>
+                    </div>
         )}
       </div>
     </div>
