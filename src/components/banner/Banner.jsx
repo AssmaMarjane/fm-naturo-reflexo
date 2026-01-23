@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Banner.scss";
+import fmLogo from "../../assets/logos/logofm_2p.png";
 
 const words = [
   { text: "Fatigue", className: "top-left" },
@@ -21,7 +22,7 @@ function Banner() {
     if (visibleWords < words.length) {
       const timer = setTimeout(() => {
         setVisibleWords((v) => v + 1);
-      }, 1800); // rythme doux
+      }, visibleWords === 0 ? 300 : 1800); // rythme doux
 
       return () => clearTimeout(timer);
     } else {
@@ -71,6 +72,8 @@ function Banner() {
         {/* FINAL */}
         {step === 3 && (
           <div className="final-block">
+                      <img src={fmLogo} className="logo-fm" alt="FM logo" />
+            
             <h2 className="fm-banner glow">Fm</h2>
 
             <h3 className="title-banner">Naturopathe x Réflexologue </h3>

@@ -73,6 +73,7 @@
   margin: 0;
   margin-bottom: 0;
   font-weight: normal;
+
   // margin-top: 4%;
   @include lg {
     font-size: 37px;
@@ -88,8 +89,26 @@
   }
 }
 
+.logo-fm {
+      position: absolute;
+top: 17%;
+  width: 100px;
+  height: 100px;
+  filter: blur(1px);
+  z-index: 10;
+  &:hover {
+    transform: scale(1.1);
+    animation-iteration-count: 1;
+    transition-timing-function: ease-out;
+  }
+  @include md {
+    width: 110px;
+    height: 110px;
+  }
+}
+
 .title-banner {
-  font-size: 15px;
+  font-size: 14px;
   font-family: $font-secondary;
   margin: 0;
   //position: absolute;
@@ -97,21 +116,18 @@
   color: $nude;
 
   @include lg {
-    font-size: 13px;
-  }
-  @include md {
     font-size: 12px;
   }
-  @include sm {
-    font-size: 11px;
-  }
-  @include xs {
+  @include md {
     font-size: 10px;
+  }
+  @include sm {
+    font-size: 9px;
   }
 }
 .subtitle-fm {
   font-family: $font-script2;
-  font-size: 18px;
+  font-size: 19px;
   margin: 0;
   //position: absolute;
   //top: 90%;
@@ -119,10 +135,10 @@
   color: $nude;
 
   @include md {
-    font-size: 15px;
+    font-size: 16px;
   }
   @include sm {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -234,7 +250,7 @@
   left: 32%;
   @include md {
     top: 27%;
-    left: 23%;
+    left: 24%;
   }
 }
 .left-center {
@@ -248,7 +264,7 @@
   top: 11%;
   right: 30%;
   @include md {
-    top: 17%;
+    top: 22%;
     right: 25%;
   }
 }
@@ -258,16 +274,16 @@
   right: 26%;
   @include md {
     right: 20%;
-      top: 33%;
+      top: 35%;
 
   }
 }
 .bottom-center {
-  bottom: 18%;
+  bottom: 12%;
   left: 47%;
   transform: translateX(-50%);
   @include md {
-    bottom: 15%;
+    bottom: 23%;
     left: 45%;
   }
 }

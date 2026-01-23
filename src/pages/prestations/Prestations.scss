@@ -2,17 +2,13 @@
 
 .prestations-section {
   text-align: center;
-  background: linear-gradient(180deg, $bleu-turkish 10%, $bleu-turkish-md 30%, $nude 60%, $bleu-turkish-md 80%, $bleu-turkish 98%);
+  background: linear-gradient(180deg, $bleu-turkish 10%, $bleu-turkish-md 30%, $nude-fade 60%, $bleu-turkish-md 80%, $bleu-turkish 98%);
   padding: 20px;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
 
-.prestations-section {
-  position: relative;
-  overflow: hidden;
-}
 
 .prestations-section::before,
 .prestations-section::after {
@@ -38,8 +34,11 @@
 .prestations-section::before {
   top: 25%;
   transform: translateY(-50%);
-}
+  @media (max-width: 873px)  {
+  top: 20%;
 
+}
+}
 /* Frise du bas */
 .prestations-section::after {
   top: 95%;
@@ -52,14 +51,14 @@
   z-index: 1;
 }
 
-@include sm {
+@media (max-width: 700px) {
   .prestations-section::before,
   .prestations-section::after {
     top: -120px;      // 👈 dépasse en haut
     bottom: -120px;   // 👈 dépasse en bas
     height: auto;
 
-    width: 90px;
+    width: 85px;
 
     background-repeat: repeat-y;
     background-size: auto 80px;
@@ -94,11 +93,10 @@
   width: 230px;
   height: 200px;
   padding: 1rem;
-  border-radius: 8px;
   background-color: $nude;
-  // border: 1px solid $bleu-turkish;
+  //border: 1.5px solid $bleu-turkish-md;
   border-radius: 15px;
-  box-shadow: 0 0 20px $nude;
+  box-shadow: 0 0 22px $nude;
 
   cursor: pointer;
   transition: transform 0.2s ease;
