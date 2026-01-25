@@ -35,9 +35,25 @@ function Header() {
           <Link to="/" className="fm-logo-link"/>
         <Link to="/" className="logo-overlay" />
        
-        <button className="burger" onClick={() => setIsOpen((prev) => !prev)}>
-          ☰
-        </button>
+      {/* Burger */}
+      <button
+        className="burger"
+        aria-label="Ouvrir le menu"
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
+        ☰
+      </button>
+
+      {/* Overlay */}
+      {isOpen && (
+        <div
+          className="menu-overlay"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* Menu mobile */}
+
         <nav className={`mobile-menu ${isOpen ? "open" : ""}`}>
           {links.map((link) => (
             <Link key={link.path} to={link.path} className="home-link" onClick={() => setIsOpen(false)}>
