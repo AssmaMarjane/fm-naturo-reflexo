@@ -102,11 +102,18 @@ top: 18%;
     transition-timing-function: ease-out;
   }
   @include md {
-    top: 7%;
+    top: 14%;
 
     width: 110px;
     height: 110px;
   }
+    @include sm {
+    top: 7%;
+
+    width: 100px;
+    height: 100px;
+  }
+
 }
 
 .title-banner {
@@ -134,7 +141,7 @@ top: 18%;
   //position: absolute;
   //top: 90%;
   //margin-bottom: 12px;
-  color: $nude;
+  color: $nude-rose;
 
   @include md {
     font-size: 16px;
@@ -148,7 +155,7 @@ top: 18%;
   font-family: $font-secondary;
   font-size: 19px;
   font-weight: 600;
-  color: $nude;
+  color: $nude-rose;
   margin: 0;
   margin-top: 10%;
 
@@ -250,6 +257,8 @@ top: 18%;
 .top-left {
   top: 14%;
   left: 32%;
+    color: $nude-fonce;
+
   @include md {
     top: 27%;
     left: 24%;
@@ -258,6 +267,8 @@ top: 18%;
 .left-center {
   top: 67%;
   left: 29%;
+      color: $vert-plante;
+
   @include md {
     left: 24%;
   }
@@ -265,6 +276,8 @@ top: 18%;
 .top-right {
   top: 11%;
   right: 30%;
+      color: $vert-plante-clair;
+
   @include md {
     top: 22%;
     right: 25%;
@@ -274,6 +287,8 @@ top: 18%;
 .right-center {
   top: 40%;
   right: 26%;
+      color: $nude-rose;
+
   @include md {
     right: 20%;
       top: 35%;
@@ -283,6 +298,8 @@ top: 18%;
 .bottom-center {
   bottom: 12%;
   left: 47%;
+      color: $nude-rose;
+
   transform: translateX(-50%);
   @include md {
     bottom: 19%;

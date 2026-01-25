@@ -8,18 +8,18 @@
   min-height: 100vh;
   font-family: "Libre Baskerville", serif;
   position: relative;
-        &::after {
+  &::after {
     content: "";
     position: absolute;
     inset: 0; // top:0; right:0; bottom:0; left:0;
-    
+
     background-image: url("../../assets/logos/logofm_2px.png");
     background-repeat: repeat;
     background-size: 65px 65px;
 
-    filter: blur(1.2px);        // 🔥 BLUR
-    opacity: 0.1;            // 🔥 effet luxe discret
-    pointer-events: none;     // 🔑 ne bloque pas les clics
+    filter: blur(1.2px); // 🔥 BLUR
+    opacity: 0.1; // 🔥 effet luxe discret
+    pointer-events: none; // 🔑 ne bloque pas les clics
     z-index: 0;
   }
 
@@ -27,12 +27,11 @@
     position: relative;
     z-index: 1; // contenu AU-DESSUS du motif
   }
-
 }
 
 .reflexo-content {
   width: 70%;
-  background-color: $nude; 
+  background-color: $nude;
   //background: linear-gradient(180deg, $bleu-turkish 0%, $brun 20%, $brun-lgt 40%, $brun 60%, $bleu-turkish 100%);
   padding: 40px 50px;
   border: 3px solid $brun;
@@ -46,7 +45,6 @@
 .reflexo-title {
   border-bottom: 2px solid $brun-lgt; /* ligne sous le titre */
   color: $brun;
-
 }
 
 .reflexo-subtitle {
@@ -105,7 +103,7 @@
   color: #fffdf5;
   border: none;
   border-radius: 25px;
-  padding: 15px ;
+  padding: 15px;
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
