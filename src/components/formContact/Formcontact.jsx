@@ -222,9 +222,9 @@ function FormContact() {
 
               {showCalendar && (
                 <Calendar
-                  view="month"
-                  maxDetail="year"
-                  minDetail="month"
+                  view="day"
+                  maxDetail="month"
+                  minDetail="day"
                   onClickDay={(date) => {
                     setFormData((prev) => ({
                       ...prev,
