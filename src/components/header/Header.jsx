@@ -16,7 +16,7 @@ const links = [
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  console.log("Menu ouvert ?", isOpen);
+  //console.log("Menu ouvert ?", isOpen);
 
   useEffect(() => {
     setIsOpen(false);
