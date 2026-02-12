@@ -279,7 +279,7 @@ top: 18%;
       color: $vert-plante-clair;
 
   @include md {
-    top: 22%;
+    top: 20%;
     right: 25%;
   }
 }
@@ -290,8 +290,8 @@ top: 18%;
       color: $nude-rose;
 
   @include md {
-    right: 20%;
-      top: 35%;
+    right: 18%;
+      top: 32%;
 
   }
 }
@@ -302,7 +302,7 @@ top: 18%;
 
   transform: translateX(-50%);
   @include md {
-    bottom: 19%;
+    bottom: 20%;
     left: 45%;
   }
 }
@@ -329,7 +329,7 @@ top: 18%;
     0 0 28px rgba(255, 200, 150, 0.3);
 
   @include md {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 /* FINAL */

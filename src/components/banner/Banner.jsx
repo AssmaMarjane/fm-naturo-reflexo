@@ -20,14 +20,17 @@ function Banner() {
     if (step !== 1) return;
 
     if (visibleWords < words.length) {
-      const timer = setTimeout(() => {
-        setVisibleWords((v) => v + 1);
-      }, visibleWords === 0 ? 300 : 1800); // rythme doux
+      const timer = setTimeout(
+        () => {
+          setVisibleWords((v) => v + 1);
+        },
+        visibleWords === 0 ? 200 : 800,
+      ); // rythme doux visibleWords === 0 ? 300 : 1800
 
       return () => clearTimeout(timer);
     } else {
       // quand tous les mots sont visibles → étape 2
-      const timer = setTimeout(() => setStep(2), 2000);
+      const timer = setTimeout(() => setStep(2), 1500);
       return () => clearTimeout(timer);
     }
   }, [visibleWords, step]);
@@ -57,7 +60,7 @@ function Banner() {
       <div className="overlay">
         {/* MOTS */}
         {(step === 1 || step === 2) && (
-          <div className={`words ${step === 3 ? "fade-out" : ""}`}>
+          <div className="words">
             {words.slice(0, visibleWords).map((word, i) => (
               <span key={i} className={`word ${word.className}`}>
                 {word.text}
@@ -72,18 +75,18 @@ function Banner() {
         {/* FINAL */}
         {step === 3 && (
           <div className="final-block">
-                      <img src={fmLogo} className="logo-fm" alt="FM logo" />
-            
+            <img src={fmLogo} className="logo-fm" alt="FM logo" />
+
             <h2 className="fm-banner glow">Fm</h2>
 
             <h3 className="title-banner">Naturopathe x Réflexologue </h3>
             <p className="subtitle-fm">La santé au coeur du bien-être</p>
-          <button className="contact-btn">
-            <Link to="/contact" className="banner-link">
-              Prendre rendez-vous
-            </Link>
-          </button>
-                    </div>
+            <button className="contact-btn">
+              <Link to="/contact" className="banner-link">
+                Prendre rendez-vous
+              </Link>
+            </button>
+          </div>
         )}
       </div>
     </div>
@@ -91,6 +94,11 @@ function Banner() {
 }
 
 export default Banner;
+
+/**
+ *<div className={`words ${step === 3 ? "fade-out" : ""}`}>
+
+ */
 
 /** 
 const words = [
