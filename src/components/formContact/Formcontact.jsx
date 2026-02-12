@@ -3,7 +3,7 @@ import "./FormContact.scss";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import prestations from "../../data/prestations.json";
-import { sendContactForm, sendRdvForm, getDispo } from "../../api/contactApi.js";
+import { sendContactForm, sendRdvForm, getDispo } from "../../api/index.js";
 
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -16,8 +16,8 @@ function FormContact() {
 
   const [dispoState, setDispoState] = useState({});
   const [showCalendar, setShowCalendar] = useState(false);
-  const [isBooking, setIsBooking] = useState(false);
-
+  //const [isBooking, setIsBooking] = useState(false);
+const [isBooking, setIsBooking] = useState(!!preselection);
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
@@ -29,10 +29,32 @@ function FormContact() {
   });
 
   console.log(location.state);
+
   const toLocalIso = (date) => {
     if (!(date instanceof Date)) return null; // sécurité
     return date.toLocaleDateString("en-CA"); // YYYY-MM-DD
   };
+
+  //  Auto-cocher "Réserver un RDV" si on arrive avec une prestation
+  useEffect(() => {
+    if (preselection) {
+      // Navigation depuis Prestations
+      setIsBooking(true);
+      setFormData((prev) => ({
+        ...prev,
+        prestation: preselection,
+      }));
+    } else {
+      // Refresh ou accès direct
+      setIsBooking(false);
+      setFormData((prev) => ({
+        ...prev,
+        prestation: "",
+        date: "",
+        heure: "",
+      }));
+    }
+  }, [preselection]);
 
   // Récupérer les créneaux depuis le backend
   useEffect(() => {
@@ -177,7 +199,23 @@ function FormContact() {
 
         <div className="input-wrapper">
           <label>
-            <input type="checkbox" checked={isBooking} onChange={(e) => setIsBooking(e.target.checked)} className="form-label" />
+            <input
+              type="checkbox"
+              checked={isBooking}
+              onChange={(e) => {
+                const checked = e.target.checked;
+                setIsBooking(checked);
+
+                if (!checked) {
+                  setFormData((prev) => ({
+                    ...prev,
+                    prestation: "",
+                    date: "",
+                    heure: "",
+                  }));
+                }
+              }}
+            />
             Réserver un RDV
           </label>
         </div>
@@ -245,9 +283,10 @@ function FormContact() {
                 <label htmlFor="heure">Créneau horaire</label>
                 <select name="heure" value={formData.heure} onChange={handleChange} required>
                   <option value="">-- Choisir un créneau --</option>
+
                   {dispoState[formData.date]?.map((h) => (
-                    <option key={h} value={h}>
-                      {h}
+                    <option key={h.id} value={h.heure}>
+                      {h.heure}
                     </option>
                   ))}
                 </select>
