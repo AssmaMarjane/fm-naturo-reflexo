@@ -1,3 +1,4 @@
+//utils/adminhandlers
 import { useState, useEffect } from "react";
 import { crudService } from "../../services/crudService";
 import { validateName, validatePrenom, validateTelephone, formatName } from "../models/formRules";

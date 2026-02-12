@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { logoutAdmin } from "../../../api/contactApi";
+import { logoutAdmin } from "../../../api/index";
 import { logoutSuccess } from "../../../store/authSlice";
 import { useNavigate } from "react-router-dom";
 import "./LogoutButton.scss"

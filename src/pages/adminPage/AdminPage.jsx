@@ -16,7 +16,7 @@ import RdvList from "../../components/adminRdv/RdvList";
 import RdvModal from "../../components/adminRdv/RdvModal";
 import EditRdvModal from "../../components/adminRdv/EditRdvModal";
 import { loginSuccess } from "../../store/authSlice";
-import { loginAdminWithToken } from "../../api/contactApi";
+import { loginAdminWithToken } from "../../api/index";
 import AdminRdvList from "../../components/admin/AdminRdvList";
 import ContactList from "../../components/admin/contactList";
 import ContactModal from "../../components/admin/ContactModal";

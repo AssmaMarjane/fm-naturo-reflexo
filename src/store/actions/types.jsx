@@ -1,3 +1,4 @@
+//actions/type
 /**
  * Action type for indicating a successful login.
  * Triggered when a user successfully logs in and receives a token.

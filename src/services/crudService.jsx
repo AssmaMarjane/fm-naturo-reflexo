@@ -1,3 +1,4 @@
+//front/services/crudservice
 import {
   addCreneauAdmin,
   getDispo,
@@ -10,21 +11,29 @@ import {
   getContacts,
   deleteContact,
   markContactAsRead,
-} from "../api/contactApi";
+} from "../api/index";
 import { Dispo } from "../utils/models/modelDispo";
 import { Rdv } from "../utils/models/modelRdv";
 
 export const crudService = {
   // ---------- DISPO ----------
-  fetchDispo: async () => {
-    const data = await getDispo();
-    const formatted = Object.entries(data)
-      .map(([date, heures]) => new Dispo(date, heures))
-      .sort((a, b) => new Date(a.rawDate) - new Date(b.rawDate));
+fetchDispo: async () => {
+  const data = await getDispo();
 
-    console.log("✅ Dispo triées :", formatted); // <-- log après tri
-    return formatted;
-  },
+  const formatted = Object.entries(data)
+    .map(([date, heures]) =>
+      new Dispo({
+        rawDate: date,
+        heures,
+      })
+    )
+    .sort((a, b) => new Date(a.rawDate) - new Date(b.rawDate));
+
+  //console.log("✅ Dispos formatées :", formatted);
+  return formatted;
+},
+
+
 
   addCreneau: async (date, heure) => {
     return await addCreneauAdmin(date, heure);
@@ -42,7 +51,7 @@ export const crudService = {
     const data = await getRdv();
     const formatted = data.map((rdv) => new Rdv(rdv)).sort((a, b) => new Date(`${a.rawDate}T${a.heure}`) - new Date(`${b.rawDate}T${b.heure}`));
 
-    console.log("✅ RDV triés :", formatted); // <-- log après tri
+    //console.log("✅ RDV triés :", formatted); // <-- log après tri
     return formatted;
   },
   addRdv: async (rdv) => {
@@ -63,7 +72,7 @@ export const crudService = {
     const data = await getContacts();
     // optionnel : trier par date/id si besoin
     const formatted = data.sort((a, b) => b.id - a.id); // plus récent en haut
-    console.log("✅ contacts formtted récupérés :", formatted);
+    //console.log("✅ contacts formtted récupérés :", formatted);
 
     return formatted;
   },
@@ -74,4 +83,17 @@ export const crudService = {
  
    markContactAsRead: async (id) => markContactAsRead(id),
 };
+  
 
+/**
+ *   fetchDispo: async () => {
+    const data = await getDispo();
+    const formatted = Object.entries(data)
+      .map(([date, heures]) => new Dispo(date, heures))
+      .sort((a, b) => new Date(a.rawDate) - new Date(b.rawDate));
+
+    console.log("✅ Dispo triées :", formatted); // <-- log après tri
+    return formatted;
+  },
+
+ */
