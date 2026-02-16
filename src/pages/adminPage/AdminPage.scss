@@ -50,7 +50,7 @@
   flex-direction: column;
   gap: 15px;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 20%;
   min-width: 200px;
 
   button {
@@ -80,6 +80,44 @@
   }
 }
 
+.sub-nav{
+    display: flex;
+  flex-direction: row;
+  justify-self: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  min-width: 200px;
+      @include md {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+    button {
+      width: 187px;
+      height: 60px;
+    border-radius: 12px ;
+    border: none;
+    padding: 3px 5px ;
+    color: #333;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    &:hover {
+      background: $bleu-turkish;
+      color: white;
+    }
+
+    &.active {
+      background: $bleu-turkish;
+      color: white;
+      font-weight: bold;
+      box-shadow: -3px 0 6px rgba(0, 0, 0, 0.2) inset;
+    }
+
+  }
+
+}
 .dual-calendar {
   display: flex;
   gap: 10px;
